@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MagazineViewController: UIViewController {
+final class MagazineViewController: UIViewController {
 
     
     override func viewDidLoad() {
@@ -15,11 +15,11 @@ class MagazineViewController: UIViewController {
         setUI()
     }
     
-    func setUI() {
+    private func setUI() {
         setTitle()
     }
     
-    func setTitle() {
+    private func setTitle() {
         navigationItem.title = "SESAC TRAVEL"
     }
     
