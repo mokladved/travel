@@ -75,10 +75,10 @@
             </objects>
             <point key="canvasLocation" x="-686" y="884"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Custom Tab Bar Controller-->
         <scene sceneID="g8R-KQ-kqz">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="iTP-Pd-bpQ" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="iTP-Pd-bpQ" customClass="CustomTabBarController" customModule="Travel" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KCR-L3-uqE">
                         <autoresizingMask key="autoresizingMask"/>
