@@ -12,6 +12,15 @@ class MagazineViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUI()
+    }
+    
+    func setUI() {
+        setTitle()
+    }
+    
+    func setTitle() {
+        navigationItem.title = "SESAC TRAVEL"
     }
     
 }
