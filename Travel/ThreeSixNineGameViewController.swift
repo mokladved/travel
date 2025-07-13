@@ -95,5 +95,6 @@ final class ThreeSixNineGameViewController: UIViewController {
     }
     
     @IBAction func keyboardDismiss(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
 }
