@@ -35,6 +35,7 @@ final class ThreeSixNineGameViewController: UIViewController {
     
     private func resultTextViewUI() {
         resultTextView.isScrollEnabled = false
+        resultTextView.isEditable = false
         
         let input = numberTextField.text
         guard isValidNumber(from: input) else {
@@ -62,7 +63,7 @@ final class ThreeSixNineGameViewController: UIViewController {
             return false
         }
         
-        guard let number = Int(text), number >= 1 else {
+        guard let number = Int(text), number >= 1 && number <= 100 else {
             return false
         }
         return true
