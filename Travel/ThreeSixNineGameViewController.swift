@@ -35,7 +35,7 @@ final class ThreeSixNineGameViewController: UIViewController {
         numberTextField.textAlignment = .center
     }
     
-    private func resultTextViewUI() {
+    private func updateResultUI() {
         resultTextView.isScrollEnabled = false
         resultTextView.isEditable = false
         resultTextView.textAlignment = .center
@@ -97,7 +97,7 @@ final class ThreeSixNineGameViewController: UIViewController {
     
     
     @IBAction private func textFieldDidOnExit(_ sender: UITextField) {
-        resultTextViewUI()
+        updateResultUI()
         numberTextField.text = ""
     }
     
