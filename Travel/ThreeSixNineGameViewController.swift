@@ -43,6 +43,7 @@ final class ThreeSixNineGameViewController: UIViewController {
         let input = numberTextField.text
         guard isValidNumber(from: input) else {
             resultTextView.text = "유효하지 않은 숫자입니다."
+            resultTextView.text = ""
             return
         }
         
