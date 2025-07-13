@@ -36,6 +36,7 @@ final class ThreeSixNineGameViewController: UIViewController {
     private func resultTextViewUI() {
         resultTextView.isScrollEnabled = false
         resultTextView.isEditable = false
+        resultTextView.textAlignment = .center
         
         let input = numberTextField.text
         guard isValidNumber(from: input) else {
