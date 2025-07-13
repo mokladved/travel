@@ -232,11 +232,11 @@ Gw
             </objects>
             <point key="canvasLocation" x="135.1145038167939" y="24.647887323943664"/>
         </scene>
-        <!--Item-->
+        <!--369 게임-->
         <scene sceneID="LBe-wF-gho">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SJw-aQ-49l" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="FsW-eV-hUC"/>
+                    <tabBarItem key="tabBarItem" title="369 게임" image="gamecontroller.fill" catalog="system" id="FsW-eV-hUC"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="V2t-PU-kjo">
                         <rect key="frame" x="0.0" y="118" width="393" height="44"/>
@@ -273,6 +273,7 @@ Gw
     </scenes>
     <resources>
         <image name="airplane" catalog="system" width="128" height="115"/>
+        <image name="gamecontroller.fill" catalog="system" width="128" height="79"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
