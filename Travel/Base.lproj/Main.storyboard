@@ -111,10 +111,10 @@ Gw
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="44o-0w-PZ6">
-                                <rect key="frame" x="76.666666666666686" y="288" width="240" height="276"/>
+                                <rect key="frame" x="30" y="288" width="333" height="276"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gQn-Ja-ZaU">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="333" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="KLH-PE-oF1"/>
                                         </constraints>
@@ -125,7 +125,7 @@ Gw
                                         </connections>
                                     </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rHu-oa-ZRp">
-                                        <rect key="frame" x="0.0" y="74" width="240" height="128"/>
+                                        <rect key="frame" x="0.0" y="74" width="333" height="128"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" systemColor="labelColor"/>
@@ -133,7 +133,7 @@ Gw
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQL-KX-kef">
-                                        <rect key="frame" x="0.0" y="232" width="240" height="44"/>
+                                        <rect key="frame" x="0.0" y="232" width="333" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="1jd-x2-AGC"/>
                                         </constraints>
@@ -151,7 +151,9 @@ Gw
                         <viewLayoutGuide key="safeArea" id="PO2-Ex-2dO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="PO2-Ex-2dO" firstAttribute="trailing" secondItem="44o-0w-PZ6" secondAttribute="trailing" constant="30" id="AsN-qN-CPI"/>
                             <constraint firstItem="44o-0w-PZ6" firstAttribute="centerX" secondItem="RJb-9h-qC4" secondAttribute="centerX" id="ENx-Z9-XP0"/>
+                            <constraint firstItem="44o-0w-PZ6" firstAttribute="leading" secondItem="PO2-Ex-2dO" secondAttribute="leading" constant="30" id="PUp-65-KNO"/>
                             <constraint firstItem="44o-0w-PZ6" firstAttribute="centerY" secondItem="RJb-9h-qC4" secondAttribute="centerY" id="z3j-Cp-rap"/>
                         </constraints>
                     </view>
