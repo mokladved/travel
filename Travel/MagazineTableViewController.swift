@@ -58,11 +58,25 @@ final class MagazineTableViewController: UITableViewController {
     
     private func setUI() {
         setTableViewUI()
+        setNavBarUI()
     }
     
     private func setTableViewUI() {
         tableView.rowHeight = 480
         tableView.separatorStyle = .none
+    }
+    
+    private func setNavBarUI() {
+        navigationItem.title = "SESAC TRAVEL"
+        let appearance = UINavigationBarAppearance()
+        
+        appearance.backgroundColor = .white
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
+        
+        appearance.shadowColor = .lightGray
+        
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
 }
 
