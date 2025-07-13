@@ -56,11 +56,11 @@
             </objects>
             <point key="canvasLocation" x="934" y="1663"/>
         </scene>
-        <!--Item-->
+        <!--TRAVEL-->
         <scene sceneID="dps-d7-Ol1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1a8-V1-Wiq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="b1U-Pb-5kJ"/>
+                    <tabBarItem key="tabBarItem" title="TRAVEL" image="airplane" catalog="system" id="b1U-Pb-5kJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fOv-Rj-B4Y">
                         <rect key="frame" x="0.0" y="118" width="393" height="44"/>
@@ -81,6 +81,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="iTP-Pd-bpQ" customClass="CustomTabBarController" customModule="Travel" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KCR-L3-uqE">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -134,6 +135,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="airplane" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
