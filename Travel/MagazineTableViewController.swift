@@ -10,7 +10,7 @@ import Kingfisher
 
 final class MagazineTableViewController: UITableViewController {
     
-    let magazineInfo = MagazineInfo()
+    private let magazineInfo = MagazineInfo()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,12 +28,27 @@ final class MagazineTableViewController: UITableViewController {
         let imageUrl = URL(string: rawUrl)
         cell.photoImageView.kf.setImage(with: imageUrl)
         
+        let rawDate = magazineInfo.magazine[indexPath.row].date
+        let date = formatDate(rawDate, style: "yy년 MM월 dd일")
+        cell.dateLabel.text = date
+        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 350
     }
+    
+    private func formatDate(_ date: String, style: String) -> String? {
+        let formatter = DateFormatter()
+        guard let date = formatter.date(from: date) else {
+            return nil
+        }
+        formatter.dateFormat = style
+        
+        return formatter.string(from: date)
+    }
+    
     
 }
 
