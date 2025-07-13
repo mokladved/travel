@@ -52,10 +52,24 @@ final class ThreeSixNineGameViewController: UIViewController {
     
     private func getStringNumbers(from number: Int) -> String {
         let rangeOfNumbers = 1...number
-        let StringNumbers = rangeOfNumbers.map {number in
-            String(number)
+        let stringNumbers = rangeOfNumbers.map {number in
+            replaceNumberToClap(from: number)
         }
-        return StringNumbers.joined(separator: ", ")
+        return stringNumbers.joined(separator: ", ")
+    }
+    
+    private func replaceNumberToClap(from number: Int) -> String {
+        let stringNumber = String(number)
+        var resultString = ""
+        
+        for digit in stringNumber {
+            if "369".contains(digit) {
+                resultString.append("👏")
+            } else {
+                resultString.append(digit)
+            }
+        }
+        return resultString
     }
     
     
