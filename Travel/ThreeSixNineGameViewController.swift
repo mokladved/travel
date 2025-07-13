@@ -60,7 +60,8 @@ final class ThreeSixNineGameViewController: UIViewController {
     
     @IBAction private func textFieldDidOnExit(_ sender: UITextField) {
         resultTextViewUI()
-    }
+        numberTextField.text = ""
+    } 
     
     
 }
