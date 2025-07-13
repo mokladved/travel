@@ -90,5 +90,7 @@ final class ThreeSixNineGameViewController: UIViewController {
         numberTextField.text = ""
     }
     
+    @IBAction func keyboardDismiss(_ sender: UITapGestureRecognizer) {
+    }
     
 }

@@ -150,12 +150,16 @@ Gw
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PO2-Ex-2dO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="PO2-Ex-2dO" firstAttribute="trailing" secondItem="44o-0w-PZ6" secondAttribute="trailing" constant="30" id="AsN-qN-CPI"/>
                             <constraint firstItem="44o-0w-PZ6" firstAttribute="centerX" secondItem="RJb-9h-qC4" secondAttribute="centerX" id="ENx-Z9-XP0"/>
                             <constraint firstItem="44o-0w-PZ6" firstAttribute="leading" secondItem="PO2-Ex-2dO" secondAttribute="leading" constant="30" id="PUp-65-KNO"/>
                             <constraint firstItem="44o-0w-PZ6" firstAttribute="centerY" secondItem="RJb-9h-qC4" secondAttribute="centerY" id="z3j-Cp-rap"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="jTs-st-Rep" appends="YES" id="VP5-Ao-cJA"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="fln-xT-QSN"/>
                     <connections>
@@ -164,6 +168,11 @@ Gw
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MoE-oa-50f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="jTs-st-Rep">
+                    <connections>
+                        <action selector="keyboardDismiss:" destination="hiR-ad-49r" id="hqD-m4-QRc"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="133.58778625954199" y="1623.943661971831"/>
         </scene>
