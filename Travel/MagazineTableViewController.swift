@@ -14,6 +14,7 @@ final class MagazineTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUI()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -41,22 +42,27 @@ final class MagazineTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 350
-    }
-    
     private func formatDate(_ date: String, style: String) -> String? {
         let formatter = DateFormatter()
+        formatter.dateFormat = "yyMMdd"
+
         guard let date = formatter.date(from: date) else {
             return nil
         }
-        formatter.dateFormat = style
+
+        let outputFormatter = DateFormatter()
+        outputFormatter.dateFormat = style
         
-        return formatter.string(from: date)
+        return outputFormatter.string(from: date)
     }
     
+    private func setUI() {
+        setTableViewUI()
+    }
     
-    
-    
+    private func setTableViewUI() {
+        tableView.rowHeight = 480
+        tableView.separatorStyle = .none
+    }
 }
 
