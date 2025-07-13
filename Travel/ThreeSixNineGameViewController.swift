@@ -42,7 +42,18 @@ final class ThreeSixNineGameViewController: UIViewController {
             return
         }
         
-        resultTextView.text = "\(input!)"
+        let number = Int(input!)!
+        let numbers = getStringNumbers(from: number)
+        
+        resultTextView.text = "\(numbers)"
+    }
+    
+    private func getStringNumbers(from number: Int) -> String {
+        let rangeOfNumbers = 1...number
+        let StringNumbers = rangeOfNumbers.map {number in
+            String(number)
+        }
+        return StringNumbers.joined(separator: ", ")
     }
     
     
@@ -61,7 +72,7 @@ final class ThreeSixNineGameViewController: UIViewController {
     @IBAction private func textFieldDidOnExit(_ sender: UITextField) {
         resultTextViewUI()
         numberTextField.text = ""
-    } 
+    }
     
     
 }
