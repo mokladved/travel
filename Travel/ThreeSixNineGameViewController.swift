@@ -20,6 +20,7 @@ final class ThreeSixNineGameViewController: UIViewController {
     
     private func setUI() {
         setNumberTextFieldUI()
+
     }
     
     private func setNumberTextFieldUI() {
@@ -32,12 +33,34 @@ final class ThreeSixNineGameViewController: UIViewController {
         numberTextField.textAlignment = .center
     }
     
+    private func resultTextViewUI() {
+        resultTextView.isScrollEnabled = false
+        
+        let input = numberTextField.text
+        guard isValidNumber(from: input) else {
+            resultTextView.text = "유효하지 않은 숫자입니다."
+            return
+        }
+        
+        resultTextView.text = "\(input!)"
+    }
+    
+    
     private func isValidNumber(from text: String?) -> Bool {
         guard let text = text, !text.trimmingCharacters(in: .whitespaces).isEmpty else {
             return false
         }
         
-        return Int(text) == nil ? false : true
+        guard let number = Int(text), number >= 1 else {
+            return false
+        }
+        return true
     }
+    
+    
+    @IBAction private func textFieldDidOnExit(_ sender: UITextField) {
+        resultTextViewUI()
+    }
+    
     
 }
