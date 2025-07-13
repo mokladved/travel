@@ -21,6 +21,7 @@ final class ThreeSixNineGameViewController: UIViewController {
     
     private func setUI() {
         setNumberTextFieldUI()
+        setResultLabelUI()
 
     }
     
@@ -86,6 +87,11 @@ final class ThreeSixNineGameViewController: UIViewController {
             return false
         }
         return true
+    }
+    
+    private func setResultLabelUI() {
+        resultLabel.textAlignment = .center
+        resultLabel.font = .systemFont(ofSize: 18, weight: .bold)
     }
     
     
