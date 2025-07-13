@@ -10,6 +10,7 @@ import UIKit
 final class ThreeSixNineGameViewController: UIViewController {
 
     @IBOutlet private var numberTextField: UITextField!
+    @IBOutlet var resultTextView: UITextView!
     
     
     override func viewDidLoad() {
@@ -30,4 +31,13 @@ final class ThreeSixNineGameViewController: UIViewController {
         
         numberTextField.textAlignment = .center
     }
+    
+    private func isValidNumber(from text: String?) -> Bool {
+        guard let text = text, !text.trimmingCharacters(in: .whitespaces).isEmpty else {
+            return false
+        }
+        
+        return Int(text) == nil ? false : true
+    }
+    
 }
