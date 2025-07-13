@@ -10,9 +10,8 @@ import UIKit
 final class ThreeSixNineGameViewController: UIViewController {
 
     @IBOutlet private var numberTextField: UITextField!
-    @IBOutlet var resultTextView: UITextView!
-    
-    @IBOutlet var resultLabel: UILabel!
+    @IBOutlet private var resultTextView: UITextView!
+    @IBOutlet private var resultLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -118,7 +117,7 @@ final class ThreeSixNineGameViewController: UIViewController {
         numberTextField.text = ""
     }
     
-    @IBAction func keyboardDismiss(_ sender: UITapGestureRecognizer) {
+    @IBAction private func keyboardDismiss(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
 }
