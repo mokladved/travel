@@ -44,6 +44,7 @@ final class ThreeSixNineGameViewController: UIViewController {
         guard isValidNumber(from: input) else {
             resultTextView.text = "유효하지 않은 숫자입니다."
             numberTextField.text = ""
+            resultLabel.text = ""
             return
         }
         
@@ -93,6 +94,7 @@ final class ThreeSixNineGameViewController: UIViewController {
     private func setResultLabelUI() {
         resultLabel.textAlignment = .center
         resultLabel.font = .systemFont(ofSize: 18, weight: .bold)
+        resultLabel.text = ""
     }
     
     
