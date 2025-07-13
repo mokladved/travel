@@ -8,21 +8,33 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!-- -->
         <scene sceneID="fyw-15-9y7">
             <objects>
-                <tableViewController id="eAT-Zf-w0W" sceneMemberID="viewController">
+                <tableViewController id="eAT-Zf-w0W" customClass="MagazineTableViewController" customModule="Travel" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="zTE-Iy-ZeE">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="IB2-0n-Ai5">
-                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="223" id="IB2-0n-Ai5">
+                                <rect key="frame" x="0.0" y="50" width="393" height="223"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IB2-0n-Ai5" id="Wkm-WB-Zyj">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="223"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ALQ-yr-kYT">
+                                            <rect key="frame" x="32" y="23" width="329" height="177"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ALQ-yr-kYT" secondAttribute="bottom" constant="12" id="Fi6-Tj-kXD"/>
+                                        <constraint firstItem="ALQ-yr-kYT" firstAttribute="leading" secondItem="Wkm-WB-Zyj" secondAttribute="leadingMargin" constant="12" id="S4P-fH-dmD"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ALQ-yr-kYT" secondAttribute="trailing" constant="12" id="mzU-iI-hQg"/>
+                                        <constraint firstItem="ALQ-yr-kYT" firstAttribute="top" secondItem="Wkm-WB-Zyj" secondAttribute="topMargin" constant="12" id="odF-PQ-wrN"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -31,11 +43,15 @@
                             <outlet property="delegate" destination="eAT-Zf-w0W" id="J0S-2H-A0s"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="EYc-ui-tRW"/>
+                    <navigationItem key="navigationItem" id="EYc-ui-tRW">
+                        <string key="title" base64-UTF8="YES">
+Gw
+</string>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PbP-mA-yDQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-686" y="1624"/>
+            <point key="canvasLocation" x="-686.25954198473278" y="1623.943661971831"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hmB-cW-5X6">
