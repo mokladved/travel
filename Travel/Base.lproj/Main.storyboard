@@ -33,17 +33,17 @@
                                                         <constraint firstAttribute="width" secondItem="CEg-Q4-t8v" secondAttribute="height" multiplier="1:1" id="dhP-Md-dQA"/>
                                                     </constraints>
                                                 </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sJq-G5-OfE" userLabel="Title Stack View">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sJq-G5-OfE" userLabel="Title Stack View">
                                                     <rect key="frame" x="0.0" y="337" width="224.66666666666666" height="143"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LyQ-ID-DmO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="224.66666666666666" height="67.666666666666671"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="224.66666666666666" height="20.333333333333332"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Af-7M-oGl">
-                                                            <rect key="frame" x="0.0" y="75.666666666666686" width="224.66666666666666" height="67.333333333333314"/>
+                                                            <rect key="frame" x="0.0" y="122.66666666666667" width="224.66666666666666" height="20.333333333333329"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -102,10 +102,10 @@ Gw
             </objects>
             <point key="canvasLocation" x="-686.25954198473278" y="1623.943661971831"/>
         </scene>
-        <!--View Controller-->
+        <!--Three Six Nine Game View Controller-->
         <scene sceneID="hmB-cW-5X6">
             <objects>
-                <viewController id="hiR-ad-49r" sceneMemberID="viewController">
+                <viewController id="hiR-ad-49r" customClass="ThreeSixNineGameViewController" customModule="Travel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RJb-9h-qC4">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
