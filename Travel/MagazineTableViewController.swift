@@ -32,6 +32,12 @@ final class MagazineTableViewController: UITableViewController {
         let date = formatDate(rawDate, style: "yy년 MM월 dd일")
         cell.dateLabel.text = date
         
+        let rawTitle = magazineInfo.magazine[indexPath.row].title
+        cell.titleLabel.text = rawTitle
+        
+        let rawSubtitle = magazineInfo.magazine[indexPath.row].subtitle
+        cell.subtitleLabel.text = rawSubtitle
+        
         return cell
     }
     
@@ -48,6 +54,8 @@ final class MagazineTableViewController: UITableViewController {
         
         return formatter.string(from: date)
     }
+    
+    
     
     
 }
