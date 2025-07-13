@@ -12,6 +12,7 @@ final class ThreeSixNineGameViewController: UIViewController {
     @IBOutlet private var numberTextField: UITextField!
     @IBOutlet var resultTextView: UITextView!
     
+    @IBOutlet var resultLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,9 @@ final class ThreeSixNineGameViewController: UIViewController {
         
         let number = Int(input!)!
         let numbers = getStringNumbers(from: number)
+        
+        let clapCount = numbers.filter { $0 == "👏"}.count
+        resultLabel.text = "숫자 \(number)까지 총 박수는 \(clapCount)번 입니다."
         
         resultTextView.text = "\(numbers)"
     }
@@ -92,5 +96,4 @@ final class ThreeSixNineGameViewController: UIViewController {
     
     @IBAction func keyboardDismiss(_ sender: UITapGestureRecognizer) {
     }
-    
 }

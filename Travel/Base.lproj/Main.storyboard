@@ -164,6 +164,7 @@ Gw
                     <navigationItem key="navigationItem" id="fln-xT-QSN"/>
                     <connections>
                         <outlet property="numberTextField" destination="gQn-Ja-ZaU" id="oDe-Fk-R9u"/>
+                        <outlet property="resultLabel" destination="tQL-KX-kef" id="q6P-YV-NZL"/>
                         <outlet property="resultTextView" destination="rHu-oa-ZRp" id="M3p-pV-JAu"/>
                     </connections>
                 </viewController>
