@@ -177,6 +177,35 @@ Gw
             </objects>
             <point key="canvasLocation" x="133.58778625954199" y="1623.943661971831"/>
         </scene>
+        <!--Travel Table View Controller-->
+        <scene sceneID="WES-Vh-Ire">
+            <objects>
+                <tableViewController id="reZ-aN-cat" customClass="TravelTableViewController" customModule="Travel" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="dc1-pL-VPx">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TravelTableViewCell" id="khd-2r-nUm">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="khd-2r-nUm" id="mQT-yF-eFC">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="reZ-aN-cat" id="8Dk-Z9-FeG"/>
+                            <outlet property="delegate" destination="reZ-aN-cat" id="9sB-Db-GXz"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="ibv-ov-9TH"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Og-ZN-t9j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="989" y="1625"/>
+        </scene>
         <!--TRAVEL-->
         <scene sceneID="dps-d7-Ol1">
             <objects>
@@ -246,6 +275,9 @@ Gw
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="reZ-aN-cat" kind="relationship" relationship="rootViewController" id="4zw-Cc-mBk"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T4F-SS-bPv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
