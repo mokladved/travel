@@ -25,18 +25,20 @@ final class MagazineTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "travelCell", for: indexPath) as! MagazineTableViewCell
         
-        let rawUrl = magazineInfo.magazine[indexPath.row].photoImage
+        let data = magazineInfo.magazine
+        
+        let rawUrl = data[indexPath.row].photoImage
         let imageUrl = URL(string: rawUrl)
         cell.photoImageView.kf.setImage(with: imageUrl)
         
-        let rawDate = magazineInfo.magazine[indexPath.row].date
+        let rawDate = data[indexPath.row].date
         let date = formatDate(rawDate, style: "yy년 MM월 dd일")
         cell.dateLabel.text = date
         
-        let rawTitle = magazineInfo.magazine[indexPath.row].title
+        let rawTitle = data[indexPath.row].title
         cell.titleLabel.text = rawTitle
         
-        let rawSubtitle = magazineInfo.magazine[indexPath.row].subtitle
+        let rawSubtitle = data[indexPath.row].subtitle
         cell.subtitleLabel.text = rawSubtitle
         
         return cell
