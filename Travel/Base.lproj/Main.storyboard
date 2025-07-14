@@ -177,22 +177,6 @@ Gw
             </objects>
             <point key="canvasLocation" x="133.58778625954199" y="1623.943661971831"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="oj3-ha-fxy">
-            <objects>
-                <viewController id="Oi4-1Q-TbP" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="v8g-b8-UDX">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="4tt-Qu-gop"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="FrP-lS-j22"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8M6-pL-bsH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="934" y="1663"/>
-        </scene>
         <!--TRAVEL-->
         <scene sceneID="dps-d7-Ol1">
             <objects>
@@ -262,9 +246,6 @@ Gw
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Oi4-1Q-TbP" kind="relationship" relationship="rootViewController" id="MUR-rO-D49"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T4F-SS-bPv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
