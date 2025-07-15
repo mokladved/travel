@@ -8,15 +8,15 @@
 import Foundation
 
 struct Travel {
-    let title: String?
+    let title: String
     let description: String?
     let travelImage: String?
     let grade: Double?
     let save: Int?
     let like: Bool?
-    let ad: Bool?
+    let ad: Bool
     
-    init(title: String?, description: String?, travel_image: String?, grade: Double?, save: Int?, like: Bool?, ad: Bool?) {
+    init(title: String, description: String?, travel_image: String?, grade: Double?, save: Int?, like: Bool?, ad: Bool) {
         self.title = title
         self.description = description
         self.travelImage = travel_image
