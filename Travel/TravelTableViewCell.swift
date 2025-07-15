@@ -56,15 +56,16 @@ class TravelTableViewCell: UITableViewCell {
     
     func setImageViewUI(from data: Travel) {
         guard let imageUrl = data.travelImage,
-              let like = data.like else {
+              let isLike = data.like else {
             return
         }
         let url = URL(string: imageUrl)
         photoImageView.kf.setImage(with: url)
-    
-        let heartImage = like ? "star.fill" : "star"
-        likeButton.setImage(UIImage(systemName: heartImage), for: .normal)
+        
+        let heartImageName = isLike ? "heart.fill" : "heart"
         likeButton.setTitle("", for: .normal)
+        likeButton.setImage(UIImage(systemName: heartImageName), for: .normal)
+        likeButton.tintColor = isLike ? .red : .white
     }
     
     func convertNumberToStar(from grade: Double) -> NSAttributedString {
@@ -85,4 +86,5 @@ class TravelTableViewCell: UITableViewCell {
         
         return concatenateString
     }
+    
 }

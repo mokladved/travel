@@ -13,7 +13,7 @@ struct Travel {
     let travelImage: String?
     let grade: Double?
     let save: Int?
-    let like: Bool?
+    var like: Bool?
     let ad: Bool
     
     init(title: String, description: String?, travel_image: String?, grade: Double?, save: Int?, like: Bool?, ad: Bool) {
