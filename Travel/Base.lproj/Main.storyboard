@@ -232,11 +232,13 @@ Gw
                         <viewLayoutGuide key="safeArea" id="9Ic-bf-aKE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="IKF-NG-IFJ"/>
+                    <navigationItem key="navigationItem" id="IKF-NG-IFJ">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="x" id="vS2-n7-hQI"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oeb-SQ-exy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3761.0687022900761" y="2261.2676056338028"/>
+            <point key="canvasLocation" x="1926" y="3006"/>
         </scene>
         <!--TRAVEL-->
         <scene sceneID="dps-d7-Ol1">
@@ -323,6 +325,9 @@ Gw
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DlI-PA-Doy">
                         <rect key="frame" x="0.0" y="118" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -349,13 +354,14 @@ Gw
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hYv-Cm-dlI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2834.3511450381679" y="2261.2676056338028"/>
+            <point key="canvasLocation" x="999" y="3006"/>
         </scene>
     </scenes>
     <resources>
         <image name="airplane" catalog="system" width="128" height="115"/>
         <image name="gamecontroller.fill" catalog="system" width="128" height="79"/>
         <image name="info.circle.text.page" catalog="system" width="115" height="128"/>
+        <image name="x" width="128" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

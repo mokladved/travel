@@ -11,11 +11,13 @@ class ADViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavbarTitle()
+        setNavbarUI()
     }
     
-    private func setNavbarTitle() {
+    private func setNavbarUI() {
         navigationItem.title = "광고 화면"
+        navigationItem.leftBarButtonItem?.image = UIImage(systemName: "xmark")
+        navigationItem.leftBarButtonItem?.title = ""
     }
 
 }
