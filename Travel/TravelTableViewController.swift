@@ -8,10 +8,10 @@
 import UIKit
 import Kingfisher
 
-class TravelTableViewController: UITableViewController {
+final class TravelTableViewController: UITableViewController {
     
-    let travelInfo = TravelInfo().travel
-    lazy var copiedTravelInfo = travelInfo
+    private let travelInfo = TravelInfo().travel
+    private lazy var copiedTravelInfo = travelInfo
     
     override func viewDidLoad() {
         super.viewDidLoad()

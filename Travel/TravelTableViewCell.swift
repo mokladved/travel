@@ -7,14 +7,14 @@
 
 import UIKit
 
-class TravelTableViewCell: UITableViewCell {
-    @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var descriptionLabel: UILabel!
+final class TravelTableViewCell: UITableViewCell {
+    @IBOutlet private var titleLabel: UILabel!
+    @IBOutlet private var descriptionLabel: UILabel!
     
-    @IBOutlet var gradeLabel: UILabel!
-    @IBOutlet var saveCountLabel: UILabel!
+    @IBOutlet private var gradeLabel: UILabel!
+    @IBOutlet private var saveCountLabel: UILabel!
     
-    @IBOutlet var photoImageView: UIImageView!
+    @IBOutlet private var photoImageView: UIImageView!
     @IBOutlet var likeButton: UIButton!
     
     override func awakeFromNib() {
@@ -29,25 +29,25 @@ class TravelTableViewCell: UITableViewCell {
         setImageViewUI(from: data)
     }
     
-    func setTitleLabelUI(from data: Travel) {
+    private func setTitleLabelUI(from data: Travel) {
         titleLabel.font = .systemFont(ofSize: 15, weight: .bold)
         titleLabel.text = data.title
     }
     
-    func setDescriptionLabelUI(from data: Travel) {
+    private func setDescriptionLabelUI(from data: Travel) {
         descriptionLabel.font = .systemFont(ofSize: 15)
         descriptionLabel.numberOfLines = 0
         descriptionLabel.text = data.description
     }
     
-    func setGradeLabelUI(from data: Travel) {
+    private func setGradeLabelUI(from data: Travel) {
         guard let grade = data.grade else {
             return
         }
         gradeLabel.attributedText = convertNumberToStar(from: grade)
     }
     
-    func setSaveCountLabelUI(from data: Travel) {
+    private func setSaveCountLabelUI(from data: Travel) {
         guard let count = data.save else {
             return
         }
@@ -63,7 +63,7 @@ class TravelTableViewCell: UITableViewCell {
         saveCountLabel.font = .systemFont(ofSize: 13)
     }
     
-    func setImageViewUI(from data: Travel) {
+    private func setImageViewUI(from data: Travel) {
         guard let imageUrl = data.travelImage,
               let isLike = data.like else {
             return
@@ -77,7 +77,7 @@ class TravelTableViewCell: UITableViewCell {
         likeButton.tintColor = isLike ? .red : .white
     }
     
-    func convertNumberToStar(from grade: Double) -> NSAttributedString {
+    private func convertNumberToStar(from grade: Double) -> NSAttributedString {
         let roundedGrade = Int(round(grade))
         
         let filledStar = String(repeating: "★", count: roundedGrade)
