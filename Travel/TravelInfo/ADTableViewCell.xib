@@ -17,18 +17,18 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zK-PQ-YaQ">
-                        <rect key="frame" x="16" y="16" width="288" height="80"/>
+                        <rect key="frame" x="16" y="8" width="288" height="96"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7i2-LQ-g6s">
-                        <rect key="frame" x="139" y="26" width="42" height="60"/>
+                        <rect key="frame" x="139" y="18" width="42" height="76"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Oo-SV-rXN">
-                        <rect key="frame" x="252.66666666666666" y="26" width="41.333333333333343" height="20.333333333333329"/>
+                        <rect key="frame" x="252.66666666666666" y="18" width="41.333333333333343" height="20.333333333333329"/>
                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -41,11 +41,11 @@
                     <constraint firstItem="7i2-LQ-g6s" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="dJC-5e-Dlc"/>
                     <constraint firstItem="8Oo-SV-rXN" firstAttribute="top" secondItem="3zK-PQ-YaQ" secondAttribute="top" constant="10" id="fir-SS-N8R"/>
                     <constraint firstItem="3zK-PQ-YaQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="kmz-Gk-F5F"/>
-                    <constraint firstItem="3zK-PQ-YaQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="o1h-fo-AnQ"/>
+                    <constraint firstItem="3zK-PQ-YaQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="o1h-fo-AnQ"/>
                     <constraint firstItem="3zK-PQ-YaQ" firstAttribute="trailing" secondItem="8Oo-SV-rXN" secondAttribute="trailing" constant="10" id="oKr-4l-qLY"/>
                     <constraint firstItem="7i2-LQ-g6s" firstAttribute="top" secondItem="3zK-PQ-YaQ" secondAttribute="top" constant="10" id="qAF-Ft-p9G"/>
                     <constraint firstItem="3zK-PQ-YaQ" firstAttribute="bottom" secondItem="7i2-LQ-g6s" secondAttribute="bottom" constant="10" id="w08-r7-fDb"/>
-                    <constraint firstAttribute="bottom" secondItem="3zK-PQ-YaQ" secondAttribute="bottom" constant="16" id="wLp-lt-Z1Q"/>
+                    <constraint firstAttribute="bottom" secondItem="3zK-PQ-YaQ" secondAttribute="bottom" constant="8" id="wLp-lt-Z1Q"/>
                     <constraint firstItem="3zK-PQ-YaQ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xQD-e4-Qt9"/>
                 </constraints>
             </tableViewCellContentView>

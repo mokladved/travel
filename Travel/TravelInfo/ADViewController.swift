@@ -20,4 +20,7 @@ class ADViewController: UIViewController {
         navigationItem.leftBarButtonItem?.title = ""
     }
 
+    @IBAction func exitButtonTapped(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
 }

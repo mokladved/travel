@@ -64,6 +64,10 @@ final class TravelTableViewController: UITableViewController {
         }  else {
             let viewController =      storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
             
+            viewController.spotTitle = data.title
+            viewController.desc = data.description
+            viewController.imageUrl = data.travelImage
+            
             navigationController?.pushViewController(viewController, animated: true)
         }
         
@@ -82,5 +86,6 @@ final class TravelTableViewController: UITableViewController {
     
     private func setNavBarTitle() {
         navigationItem.title = "도시 상세 정보"
+        navigationItem.backButtonTitle = ""
     }
 }
