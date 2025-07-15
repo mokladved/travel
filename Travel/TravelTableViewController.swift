@@ -19,6 +19,7 @@ class TravelTableViewController: UITableViewController {
         tableView.register(xib, forCellReuseIdentifier: "TravelTableViewCell")
         tableView.rowHeight = UITableView.automaticDimension
         
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,7 +40,7 @@ class TravelTableViewController: UITableViewController {
            let like = data.like {
             cell.titleLabel.text = title
             cell.descriptionLabel.text = desc
-            cell.gradeLabel.text = "\(grade)"
+            cell.setGradeLabelUI(from: grade)
             cell.saveCountLabel.text = "\(saveCount)"
             
             let url = URL(string: imageUrl)
@@ -48,13 +49,11 @@ class TravelTableViewController: UITableViewController {
             let heartImage = like ? "star.fill" : "star"
             cell.likeButton.setImage(UIImage(systemName: heartImage), for: .normal)
             cell.likeButton.setTitle("", for: .normal)
+            
         }
         
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
     
 }

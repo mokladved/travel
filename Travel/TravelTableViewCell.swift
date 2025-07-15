@@ -25,6 +25,7 @@ class TravelTableViewCell: UITableViewCell {
     func setUI() {
         setTitleLabelUI()
         setDescriptionLabelUI()
+
     }
     
     func setTitleLabelUI() {
@@ -34,5 +35,28 @@ class TravelTableViewCell: UITableViewCell {
     func setDescriptionLabelUI() {
         descriptionLabel.font = .systemFont(ofSize: 15)
         descriptionLabel.numberOfLines = 0
+    }
+    
+    func setGradeLabelUI(from grade: Double) {
+        gradeLabel.attributedText = convertNumberToStar(from: grade)
+    }
+    
+    func convertNumberToStar(from grade: Double) -> NSAttributedString {
+        let roundedGrade = Int(round(grade))
+        
+        let filledStar = String(repeating: "★", count: roundedGrade)
+        let unfilledStar = String(repeating: "★", count: 5 - roundedGrade)
+        
+        let filledStarAttribute: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.yellow]
+        let unfilledStarAttribute: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.lightGray]
+        
+        let attributedFilledStar = NSAttributedString(string: filledStar, attributes: filledStarAttribute)
+        let attributedUnfilledStar = NSAttributedString(string: unfilledStar, attributes: unfilledStarAttribute)
+        
+        let concatenateString = NSMutableAttributedString()
+        concatenateString.append(attributedFilledStar)
+        concatenateString.append(attributedUnfilledStar)
+        
+        return concatenateString
     }
 }
