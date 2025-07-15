@@ -298,8 +298,22 @@ Gw
                     <view key="view" contentMode="scaleToFill" id="u8I-YY-RTr">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpS-tw-06a">
+                                <rect key="frame" x="100" y="362" width="193" height="222"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="9Ic-bf-aKE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bpS-tw-06a" firstAttribute="leading" secondItem="9Ic-bf-aKE" secondAttribute="leading" constant="100" id="4R7-Fz-1Bc"/>
+                            <constraint firstItem="9Ic-bf-aKE" firstAttribute="trailing" secondItem="bpS-tw-06a" secondAttribute="trailing" constant="100" id="TnY-Uq-XiS"/>
+                            <constraint firstItem="9Ic-bf-aKE" firstAttribute="bottom" secondItem="bpS-tw-06a" secondAttribute="bottom" constant="200" id="bPV-X7-SHu"/>
+                            <constraint firstItem="bpS-tw-06a" firstAttribute="top" secondItem="9Ic-bf-aKE" secondAttribute="top" constant="200" id="jdZ-s1-sMj"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IKF-NG-IFJ">
                         <barButtonItem key="leftBarButtonItem" title="Item" id="vS2-n7-hQI">
@@ -308,6 +322,9 @@ Gw
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="messageLabel" destination="bpS-tw-06a" id="gla-Fs-IXj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oeb-SQ-exy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

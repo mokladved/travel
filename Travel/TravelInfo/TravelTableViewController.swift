@@ -55,12 +55,14 @@ final class TravelTableViewController: UITableViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         if data.ad {
-            print(#function, "동작")
-            let viewController =      storyboard.instantiateViewController(withIdentifier: "ADViewController") as! ADViewController
+            let viewController = storyboard.instantiateViewController(withIdentifier: "ADViewController") as! ADViewController
+            viewController.message = data.title
             
             let nav = UINavigationController(rootViewController: viewController)
             nav.modalPresentationStyle = .fullScreen
             present(nav, animated: true)
+            
+            
         }  else {
             let viewController =      storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
             
