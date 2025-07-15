@@ -19,26 +19,52 @@ class TravelTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setUI()
     }
     
-    func setUI() {
-        setTitleLabelUI()
-        setDescriptionLabelUI()
-
+    func setCellUI(from data: Travel) {
+        setTitleLabelUI(from: data)
+        setDescriptionLabelUI(from: data)
+        setGradeLabelUI(from: data)
+        setSaveCountLabelUI(from: data)
+        setImageViewUI(from: data)
     }
     
-    func setTitleLabelUI() {
+    func setTitleLabelUI(from data: Travel) {
         titleLabel.font = .systemFont(ofSize: 15, weight: .bold)
+        titleLabel.text = data.title
     }
     
-    func setDescriptionLabelUI() {
+    func setDescriptionLabelUI(from data: Travel) {
         descriptionLabel.font = .systemFont(ofSize: 15)
         descriptionLabel.numberOfLines = 0
+        descriptionLabel.text = data.description
     }
     
-    func setGradeLabelUI(from grade: Double) {
+    func setGradeLabelUI(from data: Travel) {
+        guard let grade = data.grade else {
+            return
+        }
         gradeLabel.attributedText = convertNumberToStar(from: grade)
+    }
+    
+    func setSaveCountLabelUI(from data: Travel) {
+        guard let count = data.save else {
+            return
+        }
+        saveCountLabel.text = "\(count)"
+    }
+    
+    func setImageViewUI(from data: Travel) {
+        guard let imageUrl = data.travelImage,
+              let like = data.like else {
+            return
+        }
+        let url = URL(string: imageUrl)
+        photoImageView.kf.setImage(with: url)
+    
+        let heartImage = like ? "star.fill" : "star"
+        likeButton.setImage(UIImage(systemName: heartImage), for: .normal)
+        likeButton.setTitle("", for: .normal)
     }
     
     func convertNumberToStar(from grade: Double) -> NSAttributedString {
