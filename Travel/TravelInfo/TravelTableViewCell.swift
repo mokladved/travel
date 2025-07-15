@@ -96,4 +96,6 @@ final class TravelTableViewCell: UITableViewCell {
         return concatenateString
     }
     
+    
+    
 }

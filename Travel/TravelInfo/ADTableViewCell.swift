@@ -27,6 +27,7 @@ class ADTableViewCell: UITableViewCell {
         adButton.backgroundColor = backgroundColor
         adButton.layer.cornerRadius = 5
         adButton.clipsToBounds = true
+        adButton.isUserInteractionEnabled = false
         
         descLabel.textAlignment = .center
         descLabel.numberOfLines = 0
@@ -38,6 +39,8 @@ class ADTableViewCell: UITableViewCell {
         adLabel.layer.borderWidth = 1
         adLabel.clipsToBounds = true
         adLabel.layer.cornerRadius = 3
+        
+        
     }
     
     

@@ -76,6 +76,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <gestureRecognizers/>
             <connections>
                 <outlet property="descriptionLabel" destination="9Rz-2j-eZu" id="haj-v6-b5j"/>
                 <outlet property="gradeLabel" destination="Td9-ND-bP5" id="0Tt-ed-gLO"/>
@@ -84,7 +85,7 @@
                 <outlet property="saveCountLabel" destination="5UQ-jt-CuH" id="SzF-UX-TMD"/>
                 <outlet property="titleLabel" destination="Idf-K7-kxM" id="gpz-Kp-1tI"/>
             </connections>
-            <point key="canvasLocation" x="264.8854961832061" y="36.267605633802816"/>
+            <point key="canvasLocation" x="515" y="56"/>
         </tableViewCell>
     </objects>
 </document>

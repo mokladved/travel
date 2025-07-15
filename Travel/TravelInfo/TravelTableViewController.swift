@@ -48,7 +48,24 @@ final class TravelTableViewController: UITableViewController {
 
             return cell
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let data = travelInfo[indexPath.row]
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
+        if data.ad {
+            print(#function, "동작")
+            let viewController =      storyboard.instantiateViewController(withIdentifier: "ADViewController") as! ADViewController
+        
+            let nav = UINavigationController(rootViewController: viewController)
+            nav.modalPresentationStyle = .fullScreen
+            present(nav, animated: true)
+        }  else {
+            let viewController =      storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        
+            navigationController?.pushViewController(viewController, animated: true)
+        }
         
     }
         
@@ -75,4 +92,6 @@ final class TravelTableViewController: UITableViewController {
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
+    
+    
 }
