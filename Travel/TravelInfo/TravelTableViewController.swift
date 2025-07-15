@@ -25,6 +25,7 @@ final class TravelTableViewController: UITableViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 200
         
+        setNavBarUI()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,5 +61,18 @@ final class TravelTableViewController: UITableViewController {
         copiedTravelInfo[index].like = !status
         let indexPathToReload = IndexPath(row: index, section: 0)
         tableView.reloadRows(at: [indexPathToReload], with: .fade)
+    }
+    
+    private func setNavBarUI() {
+        navigationItem.title = "도시 상세 정보"
+        let appearance = UINavigationBarAppearance()
+        
+        appearance.backgroundColor = .white
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
+        
+        appearance.shadowColor = .lightGray
+        
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
 }

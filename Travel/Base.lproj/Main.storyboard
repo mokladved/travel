@@ -264,11 +264,11 @@ Gw
             </objects>
             <point key="canvasLocation" x="135" y="884"/>
         </scene>
-        <!--Item-->
+        <!--INFO-->
         <scene sceneID="OIE-SB-pH9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="F7V-sd-tz9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="CcN-Jf-VNg"/>
+                    <tabBarItem key="tabBarItem" title="INFO" image="info.circle.text.page" catalog="system" id="CcN-Jf-VNg"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="COm-1o-t87">
                         <rect key="frame" x="0.0" y="118" width="393" height="44"/>
@@ -287,6 +287,7 @@ Gw
     <resources>
         <image name="airplane" catalog="system" width="128" height="115"/>
         <image name="gamecontroller.fill" catalog="system" width="128" height="79"/>
+        <image name="info.circle.text.page" catalog="system" width="115" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
