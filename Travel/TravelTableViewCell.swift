@@ -51,7 +51,16 @@ class TravelTableViewCell: UITableViewCell {
         guard let count = data.save else {
             return
         }
-        saveCountLabel.text = "\(count)"
+        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        let formattedCount = formatter.string(from: NSNumber(value: count))
+        guard let formattedCount = formattedCount else {
+            return
+        }
+        saveCountLabel.text = "·  저장 \(formattedCount)"
+        saveCountLabel.textColor = .lightGray
+        saveCountLabel.font = .systemFont(ofSize: 13)
     }
     
     func setImageViewUI(from data: Travel) {
