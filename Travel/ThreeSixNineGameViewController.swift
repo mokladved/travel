@@ -41,14 +41,13 @@ final class ThreeSixNineGameViewController: UIViewController {
         resultTextView.textAlignment = .center
         
         let input = numberTextField.text
-        guard isValidNumber(from: input) else {
+        guard let number = isValidNumber(from: input) else {
             resultTextView.text = "유효하지 않은 숫자입니다."
             numberTextField.text = ""
             resultLabel.text = ""
             return
         }
         
-        let number = Int(input!)!
         let numbers = getStringNumbers(from: number)
         
         let clapCount = numbers.filter { $0 == "👏"}.count
@@ -80,15 +79,15 @@ final class ThreeSixNineGameViewController: UIViewController {
     }
     
     
-    private func isValidNumber(from text: String?) -> Bool {
+    private func isValidNumber(from text: String?) -> Int? {
         guard let text = text, !text.trimmingCharacters(in: .whitespaces).isEmpty else {
-            return false
+            return nil
         }
         
         guard let number = Int(text), number >= 1 && number <= 100 else {
-            return false
+            return nil
         }
-        return true
+        return number
     }
     
     private func setResultLabelUI() {
