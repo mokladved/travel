@@ -21,7 +21,7 @@ final class ThreeSixNineGameViewController: UIViewController {
     private func setUI() {
         setNumberTextFieldUI()
         setResultLabelUI()
-        setNavBarUI()
+        setNavBarTitle()
 
     }
     
@@ -96,18 +96,8 @@ final class ThreeSixNineGameViewController: UIViewController {
         resultLabel.text = ""
     }
     
-    private func setNavBarUI() {
+    private func setNavBarTitle() {
         navigationItem.title = "3 ! 6 ! 9"
-        let appearance = UINavigationBarAppearance()
-        
-        appearance.backgroundColor = .white
-        appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
-        
-        appearance.shadowColor = .lightGray
-        
-        navigationController?.navigationBar.standardAppearance = appearance
-        navigationController?.navigationBar.scrollEdgeAppearance = appearance
-        
     }
 
     

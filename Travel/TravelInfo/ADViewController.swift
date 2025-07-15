@@ -11,7 +11,11 @@ class ADViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setNavbarTitle()
+    }
+    
+    private func setNavbarTitle() {
+        navigationItem.title = "광고 화면"
     }
 
 }

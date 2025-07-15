@@ -25,7 +25,7 @@ final class TravelTableViewController: UITableViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 200
         
-        setNavBarUI()
+        setNavBarTitle()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,7 +45,7 @@ final class TravelTableViewController: UITableViewController {
             cell.setCellUI(from: data)
             cell.likeButton.tag = indexPath.row
             cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
-
+            
             return cell
         }
     }
@@ -57,18 +57,18 @@ final class TravelTableViewController: UITableViewController {
         if data.ad {
             print(#function, "동작")
             let viewController =      storyboard.instantiateViewController(withIdentifier: "ADViewController") as! ADViewController
-        
+            
             let nav = UINavigationController(rootViewController: viewController)
             nav.modalPresentationStyle = .fullScreen
             present(nav, animated: true)
         }  else {
             let viewController =      storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-        
+            
             navigationController?.pushViewController(viewController, animated: true)
         }
         
     }
-        
+    
     @objc func likeButtonTapped(_ sender: UIButton) {
         let index = sender.tag
         guard let status = copiedTravelInfo[index].like else {
@@ -80,18 +80,7 @@ final class TravelTableViewController: UITableViewController {
         tableView.reloadRows(at: [indexPathToReload], with: .fade)
     }
     
-    private func setNavBarUI() {
+    private func setNavBarTitle() {
         navigationItem.title = "도시 상세 정보"
-        let appearance = UINavigationBarAppearance()
-        
-        appearance.backgroundColor = .white
-        appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
-        
-        appearance.shadowColor = .lightGray
-        
-        navigationController?.navigationBar.standardAppearance = appearance
-        navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
-    
-    
 }

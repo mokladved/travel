@@ -18,6 +18,4 @@ final class DetailViewController: UIViewController {
     private func setNavbarTitle() {
         navigationItem.title = "관광지 화면"
     }
-    
-
 }
