@@ -21,6 +21,11 @@ final class PopularTableViewCell: UITableViewCell {
         setCellUI()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        cityImageView.image = nil
+    }
+    
     private func setCellUI() {
         setImageWrappedViewUI()
         setCityLabelUI()

@@ -44,6 +44,7 @@ final class PopularViewController: UIViewController, UITableViewDelegate, UITabl
         return cell
     }
     
+    
     func setNavTitle() {
         navigationItem.title = "인기 도시"
     }
