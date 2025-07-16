@@ -13,11 +13,13 @@ final class PopularViewController: UIViewController, UITableViewDelegate, UITabl
 
     @IBOutlet var popularTableView: UITableView!
     
+    @IBOutlet var segmentControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
         setNavTitle()
+        setSegmentControlUI()
         
     }
     
@@ -31,7 +33,6 @@ final class PopularViewController: UIViewController, UITableViewDelegate, UITabl
         
         let xib = UINib(nibName: "PopularTableViewCell", bundle: nil)
         popularTableView.register(xib, forCellReuseIdentifier: "PopularTableViewCell")
-        
         popularTableView.rowHeight = UITableView.automaticDimension
     }
     
@@ -42,6 +43,17 @@ final class PopularViewController: UIViewController, UITableViewDelegate, UITabl
         cell.configureData(from: row)
         
         return cell
+    }
+    
+    func setSegmentControlUI() {
+        segmentControl.setTitle("모두", forSegmentAt: 0)
+        segmentControl.setTitle("국내", forSegmentAt: 1)
+        segmentControl.setTitle("해외", forSegmentAt: 2)
+        
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 13, weight: .bold),
+        ]
+        segmentControl.setTitleTextAttributes(attributes, for: .selected)
     }
     
     

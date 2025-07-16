@@ -220,8 +220,22 @@ Gw
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9hK-jr-kog">
                                 <rect key="frame" x="20" y="172" width="353" height="60"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LkM-cL-0qT">
+                                        <rect key="frame" x="0.0" y="15" width="353" height="31"/>
+                                        <segments>
+                                            <segment title=""/>
+                                            <segment title=""/>
+                                            <segment title=""/>
+                                        </segments>
+                                    </segmentedControl>
+                                </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="6FR-Tp-lKB"/>
+                                    <constraint firstItem="LkM-cL-0qT" firstAttribute="top" secondItem="9hK-jr-kog" secondAttribute="top" constant="15" id="Awt-QX-xK1"/>
+                                    <constraint firstItem="LkM-cL-0qT" firstAttribute="leading" secondItem="9hK-jr-kog" secondAttribute="leading" id="OGv-3E-hay"/>
+                                    <constraint firstAttribute="bottom" secondItem="LkM-cL-0qT" secondAttribute="bottom" constant="15" id="ON5-I2-9GG"/>
+                                    <constraint firstAttribute="trailing" secondItem="LkM-cL-0qT" secondAttribute="trailing" id="izl-6M-19a"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -240,6 +254,7 @@ Gw
                     <navigationItem key="navigationItem" id="lVC-Qm-v3t"/>
                     <connections>
                         <outlet property="popularTableView" destination="Kuf-te-Uaz" id="0ty-D2-cP0"/>
+                        <outlet property="segmentControl" destination="LkM-cL-0qT" id="ihK-6U-8bl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2fa-DA-5xU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
