@@ -8,6 +8,8 @@
 import UIKit
 
 class PopularViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    let cityInfo = CityInfo().city
 
     @IBOutlet var popularTableView: UITableView!
     
@@ -32,6 +34,10 @@ class PopularViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PopularTableViewCell", for: indexPath) as! PopularTableViewCell
+        
+        let row = cityInfo[indexPath.row]
+        cell.configureData(from: row)
+        
         return cell
     }
     

@@ -66,8 +66,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="cityImageView" destination="9fB-vc-uQr" id="B0h-KF-pDv"/>
                 <outlet property="cityLabel" destination="VHA-1x-TeR" id="66Z-a5-yzV"/>
-                <outlet property="cityimage" destination="9fB-vc-uQr" id="B0h-KF-pDv"/>
                 <outlet property="explainLabel" destination="dFX-pg-D3m" id="U0h-PT-fmJ"/>
                 <outlet property="imageWrappedView" destination="MLW-sj-SUk" id="H4S-Dv-tgN"/>
             </connections>
