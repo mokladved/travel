@@ -7,12 +7,37 @@
 
 import UIKit
 
-class PopularViewController: UIViewController {
+class PopularViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet var popularTableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setTableView()
         
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func setTableView() {
+        popularTableView.dataSource = self
+        popularTableView.delegate = self
+        
+        let xib = UINib(nibName: "PopularTableViewCell", bundle: nil)
+        popularTableView.register(xib, forCellReuseIdentifier: "PopularTableViewCell")
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PopularTableViewCell", for: indexPath) as! PopularTableViewCell
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
 
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PopularTableViewCell: UITableViewCell {
+final class PopularTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -16,8 +16,14 @@ class PopularTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        // setUI()
     }
+    
+//    private func setUI() {
+//        layer.cornerRadius = 10
+//        layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMaxYCorner]
+//        clipsToBounds = true
+//        backgroundColor = .red
+//    }
     
 }
