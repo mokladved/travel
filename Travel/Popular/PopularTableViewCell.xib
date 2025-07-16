@@ -21,13 +21,13 @@
                         <rect key="frame" x="5" y="5" width="427" height="155"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9fB-vc-uQr">
-                                <rect key="frame" x="0.0" y="0.0" width="427" height="155"/>
+                                <rect key="frame" x="0.0" y="0.0" width="427" height="240.33333333333334"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9fB-vc-uQr" secondAttribute="height" multiplier="16:9" id="85v-bA-2O2"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHA-1x-TeR">
-                                <rect key="frame" x="16" y="0.0" width="395" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="tlP-65-gva"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="9.9999999999999982" width="395" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -48,9 +48,9 @@
                             <constraint firstAttribute="trailing" secondItem="9fB-vc-uQr" secondAttribute="trailing" id="8Kv-1G-MX4"/>
                             <constraint firstItem="9fB-vc-uQr" firstAttribute="leading" secondItem="MLW-sj-SUk" secondAttribute="leading" id="Eni-Xc-q8n"/>
                             <constraint firstAttribute="bottom" secondItem="dFX-pg-D3m" secondAttribute="bottom" id="HQd-8w-nBl"/>
-                            <constraint firstItem="VHA-1x-TeR" firstAttribute="top" secondItem="MLW-sj-SUk" secondAttribute="top" id="QRo-kW-9dG"/>
+                            <constraint firstItem="VHA-1x-TeR" firstAttribute="top" secondItem="MLW-sj-SUk" secondAttribute="top" constant="10" id="QRo-kW-9dG"/>
                             <constraint firstItem="9fB-vc-uQr" firstAttribute="top" secondItem="MLW-sj-SUk" secondAttribute="top" id="Zla-13-GCW"/>
-                            <constraint firstAttribute="bottom" secondItem="9fB-vc-uQr" secondAttribute="bottom" id="adt-48-xxq"/>
+                            <constraint firstItem="dFX-pg-D3m" firstAttribute="top" relation="greaterThanOrEqual" secondItem="VHA-1x-TeR" secondAttribute="bottom" constant="65" id="ebD-So-2j4"/>
                             <constraint firstAttribute="trailing" secondItem="VHA-1x-TeR" secondAttribute="trailing" constant="16" id="mlu-pW-fPR"/>
                             <constraint firstItem="VHA-1x-TeR" firstAttribute="leading" secondItem="MLW-sj-SUk" secondAttribute="leading" constant="16" id="mqX-H4-eao"/>
                             <constraint firstAttribute="trailing" secondItem="dFX-pg-D3m" secondAttribute="trailing" constant="16" id="wdg-N7-rPn"/>

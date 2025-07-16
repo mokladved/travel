@@ -21,7 +21,7 @@ class PopularViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return cityInfo.count
     }
     
     func setTableView() {
@@ -30,6 +30,8 @@ class PopularViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let xib = UINib(nibName: "PopularTableViewCell", bundle: nil)
         popularTableView.register(xib, forCellReuseIdentifier: "PopularTableViewCell")
+        
+        popularTableView.rowHeight = UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -40,9 +42,4 @@ class PopularViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
-
 }
