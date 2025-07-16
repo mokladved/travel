@@ -7,9 +7,9 @@
 
 import UIKit
 
-class PopularViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+final class PopularViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let cityInfo = CityInfo().city
+    private let cityInfo = CityInfo().city
 
     @IBOutlet var popularTableView: UITableView!
     
@@ -24,7 +24,7 @@ class PopularViewController: UIViewController, UITableViewDelegate, UITableViewD
         return cityInfo.count
     }
     
-    func setTableView() {
+    private func setTableView() {
         popularTableView.dataSource = self
         popularTableView.delegate = self
         
