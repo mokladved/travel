@@ -34,8 +34,8 @@ final class PopularTableViewCell: UITableViewCell {
     }
     
     func setCityLabelUI() {
-        cityLabel.font = .systemFont(ofSize: 20, weight: .bold)
-        cityLabel.textColor = .black
+        cityLabel.font = .systemFont(ofSize: 22, weight: .bold)
+        cityLabel.textColor = .white
         cityLabel.textAlignment = .right
     }
     
