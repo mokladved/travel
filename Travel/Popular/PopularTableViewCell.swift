@@ -25,6 +25,7 @@ final class PopularTableViewCell: UITableViewCell {
         setImageWrappedViewUI()
         setCityLabelUI()
         setExplainLabelUI()
+        setExplainLabelViewUI()
     }
     
     private func setImageWrappedViewUI() {
@@ -40,10 +41,12 @@ final class PopularTableViewCell: UITableViewCell {
     }
     
     private func setExplainLabelUI() {
-        explainLabelView.backgroundColor = .black.withAlphaComponent(0.3)
         explainLabel.font = .systemFont(ofSize: 15)
         explainLabel.textColor = .white
-        
+    }
+    
+    private func setExplainLabelViewUI() {
+        explainLabelView.backgroundColor = .black.withAlphaComponent(0.3)
     }
     
     func configureData(from data: City) {
