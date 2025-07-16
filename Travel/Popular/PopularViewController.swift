@@ -17,6 +17,7 @@ final class PopularViewController: UIViewController, UITableViewDelegate, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
+        setNavTitle()
         
     }
     
@@ -41,5 +42,9 @@ final class PopularViewController: UIViewController, UITableViewDelegate, UITabl
         cell.configureData(from: row)
         
         return cell
+    }
+    
+    func setNavTitle() {
+        navigationItem.title = "인기 도시"
     }
 }
