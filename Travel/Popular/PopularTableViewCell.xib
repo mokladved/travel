@@ -32,28 +32,41 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFX-pg-D3m">
-                                <rect key="frame" x="16" y="125" width="395" height="30"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mqt-XV-0hh">
+                                <rect key="frame" x="0.0" y="125" width="427" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFX-pg-D3m">
+                                        <rect key="frame" x="16" y="0.0" width="395" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="3DY-Jw-J24"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="3DY-Jw-J24"/>
+                                    <constraint firstItem="dFX-pg-D3m" firstAttribute="leading" secondItem="mqt-XV-0hh" secondAttribute="leading" constant="16" id="0Rj-ig-nbb"/>
+                                    <constraint firstAttribute="bottom" secondItem="dFX-pg-D3m" secondAttribute="bottom" id="Rbm-eN-Z7E"/>
+                                    <constraint firstAttribute="trailing" secondItem="dFX-pg-D3m" secondAttribute="trailing" constant="16" id="c86-vd-LfP"/>
+                                    <constraint firstItem="dFX-pg-D3m" firstAttribute="top" secondItem="mqt-XV-0hh" secondAttribute="top" id="joG-cQ-eaB"/>
+                                    <constraint firstAttribute="height" constant="30" id="rdR-j8-VWe"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="dFX-pg-D3m" firstAttribute="leading" secondItem="MLW-sj-SUk" secondAttribute="leading" constant="16" id="5Kb-Ta-eIR"/>
+                            <constraint firstAttribute="trailing" secondItem="mqt-XV-0hh" secondAttribute="trailing" id="7BJ-MG-FV1"/>
                             <constraint firstAttribute="trailing" secondItem="9fB-vc-uQr" secondAttribute="trailing" id="8Kv-1G-MX4"/>
                             <constraint firstItem="9fB-vc-uQr" firstAttribute="leading" secondItem="MLW-sj-SUk" secondAttribute="leading" id="Eni-Xc-q8n"/>
-                            <constraint firstAttribute="bottom" secondItem="dFX-pg-D3m" secondAttribute="bottom" id="HQd-8w-nBl"/>
                             <constraint firstItem="VHA-1x-TeR" firstAttribute="top" secondItem="MLW-sj-SUk" secondAttribute="top" constant="10" id="QRo-kW-9dG"/>
                             <constraint firstItem="9fB-vc-uQr" firstAttribute="top" secondItem="MLW-sj-SUk" secondAttribute="top" id="Zla-13-GCW"/>
-                            <constraint firstItem="dFX-pg-D3m" firstAttribute="top" relation="greaterThanOrEqual" secondItem="VHA-1x-TeR" secondAttribute="bottom" constant="65" id="ebD-So-2j4"/>
+                            <constraint firstItem="mqt-XV-0hh" firstAttribute="leading" secondItem="MLW-sj-SUk" secondAttribute="leading" id="f4U-Yp-3bS"/>
+                            <constraint firstItem="mqt-XV-0hh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="VHA-1x-TeR" secondAttribute="bottom" constant="65" id="lUx-qq-2AK"/>
                             <constraint firstAttribute="trailing" secondItem="VHA-1x-TeR" secondAttribute="trailing" constant="16" id="mlu-pW-fPR"/>
                             <constraint firstItem="VHA-1x-TeR" firstAttribute="leading" secondItem="MLW-sj-SUk" secondAttribute="leading" constant="16" id="mqX-H4-eao"/>
-                            <constraint firstAttribute="trailing" secondItem="dFX-pg-D3m" secondAttribute="trailing" constant="16" id="wdg-N7-rPn"/>
+                            <constraint firstAttribute="bottom" secondItem="mqt-XV-0hh" secondAttribute="bottom" id="uTS-rd-SKH"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -69,6 +82,7 @@
                 <outlet property="cityImageView" destination="9fB-vc-uQr" id="B0h-KF-pDv"/>
                 <outlet property="cityLabel" destination="VHA-1x-TeR" id="66Z-a5-yzV"/>
                 <outlet property="explainLabel" destination="dFX-pg-D3m" id="U0h-PT-fmJ"/>
+                <outlet property="explainLabelView" destination="mqt-XV-0hh" id="BAk-H1-Wdw"/>
                 <outlet property="imageWrappedView" destination="MLW-sj-SUk" id="H4S-Dv-tgN"/>
             </connections>
             <point key="canvasLocation" x="125.95419847328243" y="29.929577464788736"/>

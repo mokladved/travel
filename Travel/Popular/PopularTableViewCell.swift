@@ -14,6 +14,7 @@ final class PopularTableViewCell: UITableViewCell {
     @IBOutlet var cityLabel: UILabel!
     @IBOutlet var explainLabel: UILabel!
     @IBOutlet var cityImageView: UIImageView!
+    @IBOutlet var explainLabelView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,9 +40,10 @@ final class PopularTableViewCell: UITableViewCell {
     }
     
     private func setExplainLabelUI() {
-        explainLabel.backgroundColor = .black.withAlphaComponent(0.3)
+        explainLabelView.backgroundColor = .black.withAlphaComponent(0.3)
         explainLabel.font = .systemFont(ofSize: 15)
         explainLabel.textColor = .white
+        
     }
     
     func configureData(from data: City) {
