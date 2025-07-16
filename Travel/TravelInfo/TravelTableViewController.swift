@@ -11,10 +11,14 @@ import Kingfisher
 final class TravelTableViewController: UITableViewController {
     
     private let travelInfo = TravelInfo().travel
-    private lazy var copiedTravelInfo = travelInfo
+    private var copiedTravelInfo: [Travel] = []
+    
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        copiedTravelInfo = travelInfo
         let xib = UINib(nibName: "TravelTableViewCell", bundle: nil)
         tableView.register(xib, forCellReuseIdentifier: "TravelTableViewCell")
         
