@@ -20,26 +20,25 @@ final class PopularTableViewCell: UITableViewCell {
         setCellUI()
     }
     
-    func setCellUI() {
+    private func setCellUI() {
         setImageWrappedViewUI()
         setCityLabelUI()
         setExplainLabelUI()
     }
     
-    func setImageWrappedViewUI() {
+    private func setImageWrappedViewUI() {
         imageWrappedView.layer.cornerRadius = 20
         imageWrappedView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMaxYCorner]
         imageWrappedView.clipsToBounds = true
-        imageWrappedView.backgroundColor = .red
     }
     
-    func setCityLabelUI() {
+    private func setCityLabelUI() {
         cityLabel.font = .systemFont(ofSize: 22, weight: .bold)
         cityLabel.textColor = .white
         cityLabel.textAlignment = .right
     }
     
-    func setExplainLabelUI() {
+    private func setExplainLabelUI() {
         explainLabel.backgroundColor = .black.withAlphaComponent(0.3)
         explainLabel.font = .systemFont(ofSize: 15)
         explainLabel.textColor = .white
