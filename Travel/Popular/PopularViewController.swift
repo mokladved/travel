@@ -15,12 +15,19 @@ final class PopularViewController: UIViewController, UITableViewDelegate, UITabl
     
     @IBOutlet var segmentControl: UISegmentedControl!
     
+    @IBOutlet var searchTextField: UITextField!
+    @IBOutlet var searchImageButton: UIButton!
+    
+    @IBOutlet var textFieldView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
         setNavTitle()
         setSegmentControlUI()
-        
+        setSearchImageButtonUI()
+        setSearchTextFieldUI()
+        setTextFieldViewUI()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -59,5 +66,20 @@ final class PopularViewController: UIViewController, UITableViewDelegate, UITabl
     
     func setNavTitle() {
         navigationItem.title = "인기 도시"
+    }
+    
+    func setSearchImageButtonUI() {
+        searchImageButton.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
+    }
+    
+    func setSearchTextFieldUI() {
+        searchTextField.borderStyle = .none
+    }
+    
+    func setTextFieldViewUI() {
+        textFieldView.layer.borderWidth = 1
+        textFieldView.layer.cornerRadius = 5
+        textFieldView.clipsToBounds = true
+        textFieldView.layer.borderColor = UIColor.lightGray.cgColor
     }
 }

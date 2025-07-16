@@ -219,23 +219,59 @@ Gw
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9hK-jr-kog">
-                                <rect key="frame" x="20" y="172" width="353" height="60"/>
+                                <rect key="frame" x="30" y="172" width="333" height="60"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LkM-cL-0qT">
-                                        <rect key="frame" x="0.0" y="15" width="353" height="31"/>
-                                        <segments>
-                                            <segment title=""/>
-                                            <segment title=""/>
-                                            <segment title=""/>
-                                        </segments>
-                                    </segmentedControl>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6el-Ys-J3W">
+                                        <rect key="frame" x="0.0" y="0.0" width="333" height="60"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Swe-0K-jYp">
+                                                <rect key="frame" x="0.0" y="0.0" width="333" height="27"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kQI-ci-KF5">
+                                                        <rect key="frame" x="41" y="0.0" width="292" height="27"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9F-c0-mkG">
+                                                        <rect key="frame" x="10" y="3" width="21" height="21"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="B9F-c0-mkG" secondAttribute="height" multiplier="1:1" id="3Se-r7-BLk"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain"/>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="B9F-c0-mkG" firstAttribute="leading" secondItem="Swe-0K-jYp" secondAttribute="leading" constant="10" id="FeT-i6-JfN"/>
+                                                    <constraint firstItem="kQI-ci-KF5" firstAttribute="leading" secondItem="B9F-c0-mkG" secondAttribute="trailing" constant="10" id="H5l-sr-5Bv"/>
+                                                    <constraint firstAttribute="bottom" secondItem="kQI-ci-KF5" secondAttribute="bottom" id="VhD-dl-Ytz"/>
+                                                    <constraint firstAttribute="bottom" secondItem="B9F-c0-mkG" secondAttribute="bottom" constant="3" id="cOb-et-ooZ"/>
+                                                    <constraint firstItem="kQI-ci-KF5" firstAttribute="top" secondItem="Swe-0K-jYp" secondAttribute="top" id="khc-Uh-MBu"/>
+                                                    <constraint firstAttribute="trailing" secondItem="kQI-ci-KF5" secondAttribute="trailing" id="vxJ-25-eGj"/>
+                                                    <constraint firstItem="B9F-c0-mkG" firstAttribute="top" secondItem="Swe-0K-jYp" secondAttribute="top" constant="3" id="yb6-WA-Xih"/>
+                                                </constraints>
+                                            </view>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LkM-cL-0qT">
+                                                <rect key="frame" x="0.0" y="35" width="333" height="26"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="quM-ZS-uWa"/>
+                                                </constraints>
+                                                <segments>
+                                                    <segment title=""/>
+                                                    <segment title=""/>
+                                                    <segment title=""/>
+                                                </segments>
+                                            </segmentedControl>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="6FR-Tp-lKB"/>
-                                    <constraint firstItem="LkM-cL-0qT" firstAttribute="top" secondItem="9hK-jr-kog" secondAttribute="top" constant="15" id="Awt-QX-xK1"/>
-                                    <constraint firstItem="LkM-cL-0qT" firstAttribute="leading" secondItem="9hK-jr-kog" secondAttribute="leading" id="OGv-3E-hay"/>
-                                    <constraint firstAttribute="bottom" secondItem="LkM-cL-0qT" secondAttribute="bottom" constant="15" id="ON5-I2-9GG"/>
-                                    <constraint firstAttribute="trailing" secondItem="LkM-cL-0qT" secondAttribute="trailing" id="izl-6M-19a"/>
+                                    <constraint firstItem="6el-Ys-J3W" firstAttribute="top" secondItem="9hK-jr-kog" secondAttribute="top" id="BL3-0f-fTp"/>
+                                    <constraint firstAttribute="bottom" secondItem="6el-Ys-J3W" secondAttribute="bottom" id="Dgt-FX-2fW"/>
+                                    <constraint firstItem="6el-Ys-J3W" firstAttribute="leading" secondItem="9hK-jr-kog" secondAttribute="leading" id="PCx-Cb-aUl"/>
+                                    <constraint firstAttribute="trailing" secondItem="6el-Ys-J3W" secondAttribute="trailing" id="wrh-sh-CxU"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -246,15 +282,18 @@ Gw
                             <constraint firstAttribute="trailing" secondItem="Kuf-te-Uaz" secondAttribute="trailing" constant="20" id="Jh2-gh-PGi"/>
                             <constraint firstItem="9hK-jr-kog" firstAttribute="top" secondItem="U2l-Ll-WJU" secondAttribute="top" constant="10" id="S3M-a9-h4d"/>
                             <constraint firstItem="Kuf-te-Uaz" firstAttribute="leading" secondItem="U2l-Ll-WJU" secondAttribute="leading" constant="20" id="gGT-BE-FPT"/>
-                            <constraint firstItem="9hK-jr-kog" firstAttribute="leading" secondItem="U2l-Ll-WJU" secondAttribute="leading" constant="20" id="hs5-WW-YTL"/>
+                            <constraint firstItem="9hK-jr-kog" firstAttribute="leading" secondItem="U2l-Ll-WJU" secondAttribute="leading" constant="30" id="hs5-WW-YTL"/>
                             <constraint firstItem="Kuf-te-Uaz" firstAttribute="bottom" secondItem="9WP-dZ-aTx" secondAttribute="bottom" id="rEu-CL-B6s"/>
-                            <constraint firstItem="U2l-Ll-WJU" firstAttribute="trailing" secondItem="9hK-jr-kog" secondAttribute="trailing" constant="20" id="z9j-cv-fE0"/>
+                            <constraint firstItem="U2l-Ll-WJU" firstAttribute="trailing" secondItem="9hK-jr-kog" secondAttribute="trailing" constant="30" id="z9j-cv-fE0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lVC-Qm-v3t"/>
                     <connections>
                         <outlet property="popularTableView" destination="Kuf-te-Uaz" id="0ty-D2-cP0"/>
+                        <outlet property="searchImageButton" destination="B9F-c0-mkG" id="oms-oR-NBg"/>
+                        <outlet property="searchTextField" destination="kQI-ci-KF5" id="z8g-Xy-qxy"/>
                         <outlet property="segmentControl" destination="LkM-cL-0qT" id="ihK-6U-8bl"/>
+                        <outlet property="textFieldView" destination="Swe-0K-jYp" id="1Mp-zP-b5h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2fa-DA-5xU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
