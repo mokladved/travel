@@ -58,7 +58,7 @@ final class TravelTableViewCell: UITableViewCell {
         guard let formattedCount = formattedCount else {
             return
         }
-        saveCountLabel.text = "·  저장 \(formattedCount)"
+        saveCountLabel.text = "· 저장 \(formattedCount)"
         saveCountLabel.textColor = .lightGray
         saveCountLabel.font = .systemFont(ofSize: 13)
     }

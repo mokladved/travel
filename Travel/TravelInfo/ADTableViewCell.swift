@@ -21,7 +21,7 @@ class ADTableViewCell: UITableViewCell {
     }
     
     func setCellUI(from data: Travel) {
-        let backgroundColor = adColors[adColors.count % 2]
+        let backgroundColor = adColors.randomElement()
         
         adButton.setTitle("", for: .normal)
         adButton.backgroundColor = backgroundColor
