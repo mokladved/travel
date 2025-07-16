@@ -487,11 +487,11 @@ Gw
             </objects>
             <point key="canvasLocation" x="999" y="3006"/>
         </scene>
-        <!--Item-->
+        <!--인기 도시-->
         <scene sceneID="x0X-Qx-Jlk">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Pv-8j-X3n" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="aJd-sH-lmu"/>
+                    <tabBarItem key="tabBarItem" title="인기 도시" image="hand.thumbsup" catalog="system" id="aJd-sH-lmu"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gTv-Iu-AIc">
                         <rect key="frame" x="0.0" y="118" width="393" height="44"/>
@@ -510,6 +510,7 @@ Gw
     <resources>
         <image name="airplane" catalog="system" width="128" height="115"/>
         <image name="gamecontroller.fill" catalog="system" width="128" height="79"/>
+        <image name="hand.thumbsup" catalog="system" width="123" height="128"/>
         <image name="info.circle.text.page" catalog="system" width="115" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
