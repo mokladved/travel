@@ -8,22 +8,20 @@
 import UIKit
 
 final class PopularTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet var imageWrappedView: UIView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // setUI()
+        setImageView()
     }
     
-//    private func setUI() {
-//        layer.cornerRadius = 10
-//        layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMaxYCorner]
-//        clipsToBounds = true
-//        backgroundColor = .red
-//    }
+    func setImageView() {
+        imageWrappedView.layer.cornerRadius = 20
+        imageWrappedView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMaxYCorner]
+        imageWrappedView.clipsToBounds = true
+    }
+
     
 }
