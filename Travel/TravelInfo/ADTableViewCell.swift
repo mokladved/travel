@@ -40,6 +40,4 @@ class ADTableViewCell: UITableViewCell {
         adLabel.clipsToBounds = true
         adLabel.layer.cornerRadius = 3
     }
-    
-    
 }

@@ -206,6 +206,22 @@ Gw
             </objects>
             <point key="canvasLocation" x="989" y="1625"/>
         </scene>
+        <!--Popular View Controller-->
+        <scene sceneID="ASn-wt-Rbt">
+            <objects>
+                <viewController storyboardIdentifier="PopularViewController" id="2Ie-Hx-jks" customClass="PopularViewController" customModule="Travel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9WP-dZ-aTx">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="U2l-Ll-WJU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="lVC-Qm-v3t"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2fa-DA-5xU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1871" y="1625"/>
+        </scene>
         <!--Detail View Controller-->
         <scene sceneID="OOA-Sb-DSi">
             <objects>
@@ -363,6 +379,7 @@ Gw
                         <segue destination="1a8-V1-Wiq" kind="relationship" relationship="viewControllers" id="PEa-Wf-2OS"/>
                         <segue destination="SJw-aQ-49l" kind="relationship" relationship="viewControllers" id="Yyy-PM-uBv"/>
                         <segue destination="F7V-sd-tz9" kind="relationship" relationship="viewControllers" id="HrF-FB-erP"/>
+                        <segue destination="8Pv-8j-X3n" kind="relationship" relationship="viewControllers" id="YxK-0Y-s6F"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="twa-On-kPI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -445,6 +462,25 @@ Gw
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hYv-Cm-dlI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="999" y="3006"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="x0X-Qx-Jlk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Pv-8j-X3n" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="aJd-sH-lmu"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gTv-Iu-AIc">
+                        <rect key="frame" x="0.0" y="118" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2Ie-Hx-jks" kind="relationship" relationship="rootViewController" id="6Ek-pM-aWY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RBj-SK-fZR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1871" y="884"/>
         </scene>
     </scenes>
     <resources>
