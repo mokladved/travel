@@ -38,7 +38,11 @@ final class TravelTableViewCell: UITableViewCell {
         descriptionLabel.numberOfLines = 0
     }
     
-    private func formatNumber(from count: Int) -> String? {
+    private func formatNumber(from count: Int?) -> String? {
+        guard let count = count else {
+            return nil
+        }
+        
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         let formattedCount = formatter.string(from: NSNumber(value: count))
@@ -79,17 +83,16 @@ final class TravelTableViewCell: UITableViewCell {
         titleLabel.text = data.title
         
         guard let grade = data.grade,
-              let count = data.save,
+              let formattedCount = formatNumber(from: data.save),
               let imageUrl = data.travelImage,
-              let isLike = data.like else {
+              let isLike = data.like
+        
+        else {
             return
         }
         gradeLabel.attributedText = convertNumberToStar(from: grade)
         descriptionLabel.text = data.description
-        
-        guard let formattedCount = formatNumber(from: count) else {
-            return
-        }
+      
         saveCountLabel.text = "· 저장 \(formattedCount))"
         
         let url = URL(string: imageUrl)
