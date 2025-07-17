@@ -10,6 +10,8 @@ import UIKit
 class NewPopularViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     private let cityInfo = CityInfo().city
+    private var filteredCityInfo: [City] = []
+
 
     @IBOutlet var popularCollectionView: UICollectionView!
     @IBOutlet var searchButton: UIButton!
@@ -19,6 +21,7 @@ class NewPopularViewController: UIViewController, UICollectionViewDelegate, UICo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadDefaultData()
         registerCell()
         setUI()
     }
@@ -31,6 +34,11 @@ class NewPopularViewController: UIViewController, UICollectionViewDelegate, UICo
         setSegmentControlUI()
         setCollectionViewUI()
     }
+    
+    private func loadDefaultData() {
+        filteredCityInfo = cityInfo
+    }
+    
     
     func setCollectionViewUI() {
         let layout = UICollectionViewFlowLayout()
@@ -52,12 +60,12 @@ class NewPopularViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return filteredCityInfo.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = popularCollectionView.dequeueReusableCell(withReuseIdentifier: "NewPopularCollectionViewCell", for: indexPath) as! NewPopularCollectionViewCell
-        let cityInfo = cityInfo[indexPath.item]
+        let cityInfo = filteredCityInfo[indexPath.item]
         cell.configureData(from: cityInfo)
         return cell
     }
@@ -88,6 +96,29 @@ class NewPopularViewController: UIViewController, UICollectionViewDelegate, UICo
             .font: UIFont.systemFont(ofSize: 13, weight: .bold),
         ]
         segmentControl.setTitleTextAttributes(attributes, for: .selected)
-        
     }
+    
+    
+    @IBAction func segmentSelected(_ sender: UISegmentedControl) {
+        filterCityInfo()
+    }
+    
+    private func filterCityInfo() {
+        var currentInfo = cityInfo
+        switch segmentControl.selectedSegmentIndex {
+        case 1:
+            currentInfo = currentInfo.filter { $0.domesticTravel }
+        case 2:
+            currentInfo = currentInfo.filter { !$0.domesticTravel }
+        default:
+            break
+        }
+        
+        filteredCityInfo = currentInfo
+        popularCollectionView.reloadData()
+    }
+    
+    
+    
+    
 }
