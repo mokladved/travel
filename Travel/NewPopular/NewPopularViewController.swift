@@ -138,5 +138,8 @@ class NewPopularViewController: UIViewController, UICollectionViewDelegate, UICo
         filterCityInfo()
     }
     
+    @IBAction func keyboardDismiss(_ sender: UITapGestureRecognizer) {
+    }
+    
     
 }
