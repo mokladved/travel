@@ -28,6 +28,7 @@ class NewPopularViewController: UIViewController, UICollectionViewDelegate, UICo
         setSearchViewUI()
         setSearchTextFieldUI()
         setSearchViewUI()
+        setSegmentControlUI()
     }
     
     func registerCell() {
@@ -63,5 +64,17 @@ class NewPopularViewController: UIViewController, UICollectionViewDelegate, UICo
     
     private func setSearchTextFieldUI() {
         searchTextField.borderStyle = .none
+    }
+    
+    private func setSegmentControlUI() {
+        segmentControl.setTitle("모두", forSegmentAt: 0)
+        segmentControl.setTitle("국네", forSegmentAt: 1)
+        segmentControl.setTitle("해외", forSegmentAt: 2)
+        
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 13, weight: .bold),
+        ]
+        segmentControl.setTitleTextAttributes(attributes, for: .selected)
+        
     }
 }
