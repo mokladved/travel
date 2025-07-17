@@ -11,13 +11,23 @@ class NewPopularViewController: UIViewController, UICollectionViewDelegate, UICo
 
     private let cityInfo = CityInfo().city
 
-    
-    
     @IBOutlet var popularCollectionView: UICollectionView!
+    @IBOutlet var searchButton: UIButton!
+    @IBOutlet var searchTextField: UITextField!
+    @IBOutlet var segmentControl: UISegmentedControl!
+    @IBOutlet var searchView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCell()
+        setUI()
+    }
+    
+    func setUI() {
+        setSearchButtonUI()
+        setSearchViewUI()
+        setSearchTextFieldUI()
+        setSearchViewUI()
     }
     
     func registerCell() {
@@ -35,10 +45,23 @@ class NewPopularViewController: UIViewController, UICollectionViewDelegate, UICo
         let cell = popularCollectionView.dequeueReusableCell(withReuseIdentifier: "NewPopularCollectionViewCell", for: indexPath) as! NewPopularCollectionViewCell
         let cityInfo = cityInfo[indexPath.item]
         cell.configureData(from: cityInfo)
-        
         return cell
     }
     
+    private func setSearchButtonUI() {
+        searchButton.setTitle("", for: .normal)
+        searchButton.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
+        searchButton.tintColor = .gray
+    }
     
+    private func setSearchViewUI() {
+        searchView.layer.borderWidth = 1
+        searchView.layer.cornerRadius = 5
+        searchView.clipsToBounds = true
+        searchView.layer.borderColor = UIColor.lightGray.cgColor
+    }
     
+    private func setSearchTextFieldUI() {
+        searchTextField.borderStyle = .none
+    }
 }

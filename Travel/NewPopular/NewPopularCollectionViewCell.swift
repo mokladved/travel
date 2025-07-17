@@ -14,7 +14,6 @@ class NewPopularCollectionViewCell: UICollectionViewCell {
     @IBOutlet var explainLabel: UILabel!
     
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
      
@@ -51,6 +50,7 @@ class NewPopularCollectionViewCell: UICollectionViewCell {
         cityNameLabel.text = "\(data.cityName) | \(data.cityEnglishName)"
         explainLabel.text = data.cityExplain
     }
+    
     
     
     
