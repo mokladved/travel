@@ -7,17 +7,17 @@
 
 import UIKit
 
-class NewPopularViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+final class NewPopularViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     private let cityInfo = CityInfo().city
     private var filteredCityInfo: [City] = []
 
 
-    @IBOutlet var popularCollectionView: UICollectionView!
-    @IBOutlet var searchButton: UIButton!
-    @IBOutlet var searchTextField: UITextField!
-    @IBOutlet var segmentControl: UISegmentedControl!
-    @IBOutlet var searchView: UIView!
+    @IBOutlet private var popularCollectionView: UICollectionView!
+    @IBOutlet private var searchButton: UIButton!
+    @IBOutlet private var searchTextField: UITextField!
+    @IBOutlet private var segmentControl: UISegmentedControl!
+    @IBOutlet private var searchView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class NewPopularViewController: UIViewController, UICollectionViewDelegate, UICo
         setUI()
     }
     
-    func setUI() {
+    private func setUI() {
         setSearchButtonUI()
         setSearchViewUI()
         setSearchTextFieldUI()
@@ -39,7 +39,7 @@ class NewPopularViewController: UIViewController, UICollectionViewDelegate, UICo
         filteredCityInfo = cityInfo
     }
     
-    func setCollectionViewUI() {
+    private func setCollectionViewUI() {
         let layout = UICollectionViewFlowLayout()
         let cellWidth = NewPopularVCConstant.cellWidth()
         let spacing = NewPopularVCConstant.spacing
@@ -51,7 +51,7 @@ class NewPopularViewController: UIViewController, UICollectionViewDelegate, UICo
         popularCollectionView.collectionViewLayout = layout
     }
     
-    func registerCell() {
+    private func registerCell() {
         let xib = UINib(nibName: "NewPopularCollectionViewCell", bundle: nil)
         popularCollectionView.register(xib, forCellWithReuseIdentifier: "NewPopularCollectionViewCell")
         popularCollectionView.delegate = self
@@ -98,14 +98,30 @@ class NewPopularViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     
-    @IBAction func segmentSelected(_ sender: UISegmentedControl) {
+    @IBAction private func segmentSelected(_ sender: UISegmentedControl) {
         filterCityInfo()
     }
     
-    private func filterCityInfo() {
+    private func filterCityInfo(isRealTime: Bool = true) {
+        let text = validateSearchText(from: searchTextField.text)
+        
+        if !isRealTime {
+            guard text != nil else {
+                showAlert(message: "두 글자 이상 입력해주세요.")
+                filteredCityInfo = filterBySegment(from: self.cityInfo)
+                popularCollectionView.reloadData()
+            return
+            }
+        }
+            
         let filteredCities = filterBySegment(from: cityInfo)
-        let searchedCities = filterByTextField(from: filteredCities)
-        filteredCityInfo = searchedCities
+        
+        if let text = text {
+            let searchedCities = filterByTextField(from: filteredCities, with: text)
+            filteredCityInfo = searchedCities
+        } else {
+            filteredCityInfo = filteredCities
+        }
         popularCollectionView.reloadData()
     }
     
@@ -120,10 +136,7 @@ class NewPopularViewController: UIViewController, UICollectionViewDelegate, UICo
         }
     }
     
-    private func filterByTextField(from cities: [City]) -> [City] {
-        guard let text = searchTextField.text, !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
-            return cities
-        }
+    private func filterByTextField(from cities: [City], with text: String) -> [City] {
         let lowerCasedText = text.lowercased()
         
         return cities.filter { city in
@@ -133,13 +146,41 @@ class NewPopularViewController: UIViewController, UICollectionViewDelegate, UICo
         }
     }
     
+    private func validateSearchText(from text: String?) -> String? {
+        guard let text = text,
+              let trimmedText = text.trimmingCharacters(in: .whitespacesAndNewlines) as String?,
+              !trimmedText.isEmpty,
+              trimmedText.count >= 2 else {
+            return nil
+        }
+        return trimmedText
+    }
+    
+    private func showAlert(message: String) {
+        let alert = UIAlertController(
+            title: "알림",
+            message: message,
+            preferredStyle: .alert
+        )
+    
+        let ok = UIAlertAction(title: "확인", style: .default) { _ in
+                self.view.endEditing(true)
+            }
+        alert.addAction(ok)
+        
+        present(alert, animated: true)
+    }
+    
 
-    @IBAction func searchDidEndOnExit(_ sender: UITextField) {
+    @IBAction private func searchDidEndOnExit(_ sender: UITextField) {
+        filterCityInfo(isRealTime: false)
+    }
+    
+    @IBAction private func keyboardDismiss(_ sender: UITapGestureRecognizer) {
+    }
+    
+    
+    @IBAction func textFieldEditingChanged(_ sender: UITextField) {
         filterCityInfo()
     }
-    
-    @IBAction func keyboardDismiss(_ sender: UITapGestureRecognizer) {
-    }
-    
-    
 }
