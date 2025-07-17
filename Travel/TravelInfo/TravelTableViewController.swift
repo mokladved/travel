@@ -64,7 +64,7 @@ final class TravelTableViewController: UITableViewController {
             present(nav, animated: true)
             
         }  else {
-            let viewController =      storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+            let viewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
             
             viewController.spotTitle = data.title
             viewController.desc = data.description
