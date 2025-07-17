@@ -16,8 +16,7 @@ class NewPopularCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-     
-
+        setUI()
     }
     
     override func layoutSubviews() {
@@ -32,7 +31,8 @@ class NewPopularCollectionViewCell: UICollectionViewCell {
     }
     
     private func setUI() {
-        setImageView()
+        setCityNameLabelUI()
+        setExplainLabelUI()
     }
     
     func configureData(from data: City) {
@@ -51,9 +51,16 @@ class NewPopularCollectionViewCell: UICollectionViewCell {
         explainLabel.text = data.cityExplain
     }
     
+    func setCityNameLabelUI() {
+        cityNameLabel.font = .systemFont(ofSize: 13, weight: .heavy)
+        cityNameLabel.textAlignment = .center
+    }
     
-    
-    
+    func setExplainLabelUI() {
+        explainLabel.font = .systemFont(ofSize: 12)
+        explainLabel.numberOfLines = 0
+        explainLabel.textAlignment = .center
+    }
     
     
     

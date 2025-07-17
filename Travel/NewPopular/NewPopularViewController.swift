@@ -29,6 +29,19 @@ class NewPopularViewController: UIViewController, UICollectionViewDelegate, UICo
         setSearchTextFieldUI()
         setSearchViewUI()
         setSegmentControlUI()
+        setCollectionViewUI()
+    }
+    
+    func setCollectionViewUI() {
+        let layout = UICollectionViewFlowLayout()
+        let cellWidth = NewPopularVCConstant.cellWidth()
+        let spacing = NewPopularVCConstant.spacing
+        layout.itemSize = CGSize(width: cellWidth, height: cellWidth * 1.4)
+        layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
+        layout.minimumInteritemSpacing = spacing
+        layout.minimumLineSpacing = spacing
+        layout.scrollDirection = .vertical
+        popularCollectionView.collectionViewLayout = layout
     }
     
     func registerCell() {
@@ -68,7 +81,7 @@ class NewPopularViewController: UIViewController, UICollectionViewDelegate, UICo
     
     private func setSegmentControlUI() {
         segmentControl.setTitle("모두", forSegmentAt: 0)
-        segmentControl.setTitle("국네", forSegmentAt: 1)
+        segmentControl.setTitle("국내", forSegmentAt: 1)
         segmentControl.setTitle("해외", forSegmentAt: 2)
         
         let attributes: [NSAttributedString.Key: Any] = [
