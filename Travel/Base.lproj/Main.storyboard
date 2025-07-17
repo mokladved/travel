@@ -345,6 +345,9 @@ TmV3UG9wdWxhchsbVmlld0NvbnRyb2xsZXI
                                             <segment title="Second"/>
                                             <segment title=""/>
                                         </segments>
+                                        <connections>
+                                            <action selector="segmentSelected:" destination="WhG-x9-ehP" eventType="valueChanged" id="Wp3-a7-XVo"/>
+                                        </connections>
                                     </segmentedControl>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bN2-w7-F2v">
                                         <rect key="frame" x="0.0" y="0.0" width="333" height="30"/>
@@ -361,6 +364,9 @@ TmV3UG9wdWxhchsbVmlld0NvbnRyb2xsZXI
                                                         <rect key="frame" x="29" y="0.0" width="304" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="searchDidEndOnExit:" destination="WhG-x9-ehP" eventType="editingDidEndOnExit" id="Fgz-se-3tj"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -402,7 +408,7 @@ TmV3UG9wdWxhchsbVmlld0NvbnRyb2xsZXI
                     </view>
                     <navigationItem key="navigationItem" id="TfX-V2-e8B"/>
                     <connections>
-                        <outlet property="popularCollectionView" destination="Mbl-WG-V2V" id="4d0-FG-LIE"/>
+                        <outlet property="popularCollectionView" destination="Mbl-WG-V2V" id="Jma-yt-gdn"/>
                         <outlet property="searchButton" destination="fPD-CX-PjL" id="q4d-QM-9S9"/>
                         <outlet property="searchTextField" destination="UKR-JE-f5N" id="xWi-en-My5"/>
                         <outlet property="searchView" destination="bN2-w7-F2v" id="uDE-Ad-7iu"/>

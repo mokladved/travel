@@ -39,7 +39,6 @@ class NewPopularViewController: UIViewController, UICollectionViewDelegate, UICo
         filteredCityInfo = cityInfo
     }
     
-    
     func setCollectionViewUI() {
         let layout = UICollectionViewFlowLayout()
         let cellWidth = NewPopularVCConstant.cellWidth()
@@ -104,21 +103,40 @@ class NewPopularViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     private func filterCityInfo() {
-        var currentInfo = cityInfo
-        switch segmentControl.selectedSegmentIndex {
-        case 1:
-            currentInfo = currentInfo.filter { $0.domesticTravel }
-        case 2:
-            currentInfo = currentInfo.filter { !$0.domesticTravel }
-        default:
-            break
-        }
-        
-        filteredCityInfo = currentInfo
+        let filteredCities = filterBySegment(from: cityInfo)
+        let searchedCities = filterByTextField(from: filteredCities)
+        filteredCityInfo = searchedCities
         popularCollectionView.reloadData()
     }
     
+    private func filterBySegment(from cities: [City]) -> [City] {
+        switch segmentControl.selectedSegmentIndex {
+        case 1:
+            return cities.filter { $0.domesticTravel }
+        case 2:
+            return cities.filter { !$0.domesticTravel }
+        default:
+            return cities
+        }
+    }
     
+    private func filterByTextField(from cities: [City]) -> [City] {
+        guard let text = searchTextField.text, !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            return cities
+        }
+        let lowerCasedText = text.lowercased()
+        
+        return cities.filter { city in
+            return city.cityName.lowercased().contains(lowerCasedText) ||
+            city.cityEnglishName.lowercased().contains(lowerCasedText) ||
+            city.cityExplain.lowercased().contains(lowerCasedText)
+        }
+    }
+    
+
+    @IBAction func searchDidEndOnExit(_ sender: UITextField) {
+        filterCityInfo()
+    }
     
     
 }
