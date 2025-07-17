@@ -13,8 +13,6 @@ final class TravelTableViewController: UITableViewController {
     private let travelInfo = TravelInfo().travel
     private var copiedTravelInfo: [Travel] = []
     
- 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,17 +37,15 @@ final class TravelTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let data = copiedTravelInfo[indexPath.row]
-        
         if data.ad {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ADTableViewCell", for: indexPath) as! ADTableViewCell
             cell.setCellUI(from: data)
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TravelTableViewCell", for: indexPath) as! TravelTableViewCell
-            cell.setCellUI(from: data)
+            cell.configureData(from: data)
             cell.likeButton.tag = indexPath.row
             cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
-            
             return cell
         }
     }
@@ -65,7 +61,6 @@ final class TravelTableViewController: UITableViewController {
             let nav = UINavigationController(rootViewController: viewController)
             nav.modalPresentationStyle = .fullScreen
             present(nav, animated: true)
-            
             
         }  else {
             let viewController =      storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController

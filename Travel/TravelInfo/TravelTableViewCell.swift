@@ -19,62 +19,40 @@ final class TravelTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setCellUI()
     }
     
-    func setCellUI(from data: Travel) {
-        setTitleLabelUI(from: data)
-        setDescriptionLabelUI(from: data)
-        setGradeLabelUI(from: data)
-        setSaveCountLabelUI(from: data)
-        setImageViewUI(from: data)
+    func setCellUI() {
+        setTitleLabelUI()
+        setDescriptionLabelUI()
+        setSaveCountLabelUI()
+        setImageViewUI()
     }
     
-    private func setTitleLabelUI(from data: Travel) {
+    private func setTitleLabelUI() {
         titleLabel.font = .systemFont(ofSize: 15, weight: .bold)
-        titleLabel.text = data.title
     }
     
-    private func setDescriptionLabelUI(from data: Travel) {
+    private func setDescriptionLabelUI() {
         descriptionLabel.font = .systemFont(ofSize: 15)
         descriptionLabel.numberOfLines = 0
-        descriptionLabel.text = data.description
     }
     
-    private func setGradeLabelUI(from data: Travel) {
-        guard let grade = data.grade else {
-            return
-        }
-        gradeLabel.attributedText = convertNumberToStar(from: grade)
-    }
-    
-    private func setSaveCountLabelUI(from data: Travel) {
-        guard let count = data.save else {
-            return
-        }
-        
+    private func formatNumber(from count: Int) -> String? {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         let formattedCount = formatter.string(from: NSNumber(value: count))
-        guard let formattedCount = formattedCount else {
-            return
-        }
-        saveCountLabel.text = "· 저장 \(formattedCount)"
+        
+        return formattedCount
+    }
+    
+    private func setSaveCountLabelUI() {
         saveCountLabel.textColor = .lightGray
         saveCountLabel.font = .systemFont(ofSize: 13)
     }
     
-    private func setImageViewUI(from data: Travel) {
-        guard let imageUrl = data.travelImage,
-              let isLike = data.like else {
-            return
-        }
-        let url = URL(string: imageUrl)
-        photoImageView.kf.setImage(with: url)
-        
-        let heartImageName = isLike ? "heart.fill" : "heart"
+    private func setImageViewUI() {
         likeButton.setTitle("", for: .normal)
-        likeButton.setImage(UIImage(systemName: heartImageName), for: .normal)
-        likeButton.tintColor = isLike ? .red : .white
     }
     
     private func convertNumberToStar(from grade: Double) -> NSAttributedString {
@@ -97,5 +75,27 @@ final class TravelTableViewCell: UITableViewCell {
     }
     
     
-    
+    func configureData(from data: Travel) {
+        titleLabel.text = data.title
+        
+        guard let grade = data.grade,
+              let count = data.save,
+              let imageUrl = data.travelImage,
+              let isLike = data.like else {
+            return
+        }
+        gradeLabel.attributedText = convertNumberToStar(from: grade)
+        descriptionLabel.text = data.description
+        
+        guard let formattedCount = formatNumber(from: count) else {
+            return
+        }
+        saveCountLabel.text = "· 저장 \(formattedCount))"
+        
+        let url = URL(string: imageUrl)
+        photoImageView.kf.setImage(with: url)
+        let heartImageName = isLike ? "heart.fill" : "heart"
+        likeButton.setImage(UIImage(systemName: heartImageName), for: .normal)
+        likeButton.tintColor = isLike ? .red : .white
+    }
 }

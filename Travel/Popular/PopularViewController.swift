@@ -52,7 +52,7 @@ final class PopularViewController: UIViewController, UITableViewDelegate, UITabl
         return cell
     }
     
-    func setSegmentControlUI() {
+    private func setSegmentControlUI() {
         segmentControl.setTitle("모두", forSegmentAt: 0)
         segmentControl.setTitle("국내", forSegmentAt: 1)
         segmentControl.setTitle("해외", forSegmentAt: 2)
@@ -64,22 +64,23 @@ final class PopularViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     
-    func setNavTitle() {
+    private func setNavTitle() {
         navigationItem.title = "인기 도시"
     }
     
-    func setSearchImageButtonUI() {
+    private func setSearchImageButtonUI() {
         searchImageButton.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
     }
     
-    func setSearchTextFieldUI() {
+    private func setSearchTextFieldUI() {
         searchTextField.borderStyle = .none
     }
     
-    func setTextFieldViewUI() {
+    private func setTextFieldViewUI() {
         textFieldView.layer.borderWidth = 1
         textFieldView.layer.cornerRadius = 5
         textFieldView.clipsToBounds = true
         textFieldView.layer.borderColor = UIColor.lightGray.cgColor
+        textFieldView.tintColor = .gray
     }
 }
