@@ -9,6 +9,8 @@ import UIKit
 import Kingfisher
 
 class NewPopularCollectionViewCell: UICollectionViewCell {
+    static let identifier = "NewPopularCollectionViewCell"
+    
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var cityNameLabel: UILabel!
     @IBOutlet var explainLabel: UILabel!

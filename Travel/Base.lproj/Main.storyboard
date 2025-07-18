@@ -366,6 +366,7 @@ TmV3UG9wdWxhchsbVmlld0NvbnRyb2xsZXI
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
                                                             <action selector="searchDidEndOnExit:" destination="WhG-x9-ehP" eventType="editingDidEndOnExit" id="Fgz-se-3tj"/>
+                                                            <action selector="textFieldEditingChanged:" destination="WhG-x9-ehP" eventType="editingChanged" id="P2r-fN-vt7"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
@@ -395,6 +396,7 @@ TmV3UG9wdWxhchsbVmlld0NvbnRyb2xsZXI
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vYC-WT-swA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="zzl-PP-1pc" firstAttribute="centerX" secondItem="obr-Oa-e3t" secondAttribute="centerX" id="4FG-uF-hba"/>
                             <constraint firstItem="Mbl-WG-V2V" firstAttribute="leading" secondItem="vYC-WT-swA" secondAttribute="leading" id="DSo-lC-Tu0"/>
@@ -405,6 +407,9 @@ TmV3UG9wdWxhchsbVmlld0NvbnRyb2xsZXI
                             <constraint firstItem="zzl-PP-1pc" firstAttribute="top" secondItem="vYC-WT-swA" secondAttribute="top" constant="5" id="qth-kG-OOk"/>
                             <constraint firstItem="Mbl-WG-V2V" firstAttribute="trailing" secondItem="vYC-WT-swA" secondAttribute="trailing" id="uk4-t3-kvK"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="v8s-Il-wb2" appends="YES" id="I7i-BM-T35"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="TfX-V2-e8B"/>
                     <connections>
@@ -416,6 +421,11 @@ TmV3UG9wdWxhchsbVmlld0NvbnRyb2xsZXI
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Vd-32-AbX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="v8s-Il-wb2">
+                    <connections>
+                        <action selector="keyboardDismiss:" destination="WhG-x9-ehP" id="L25-17-Viy"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2919.8473282442746" y="1623.943661971831"/>
         </scene>

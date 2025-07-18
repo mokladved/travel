@@ -8,7 +8,6 @@
 import UIKit
 
 final class NewPopularViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-
     private let cityInfo = CityInfo().city
     private var filteredCityInfo: [City] = []
 
@@ -52,8 +51,8 @@ final class NewPopularViewController: UIViewController, UICollectionViewDelegate
     }
     
     private func registerCell() {
-        let xib = UINib(nibName: "NewPopularCollectionViewCell", bundle: nil)
-        popularCollectionView.register(xib, forCellWithReuseIdentifier: "NewPopularCollectionViewCell")
+        let xib = UINib(nibName: NewPopularCollectionViewCell.identifier, bundle: nil)
+        popularCollectionView.register(xib, forCellWithReuseIdentifier: NewPopularCollectionViewCell.identifier)
         popularCollectionView.delegate = self
         popularCollectionView.dataSource = self
     }
@@ -63,7 +62,7 @@ final class NewPopularViewController: UIViewController, UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = popularCollectionView.dequeueReusableCell(withReuseIdentifier: "NewPopularCollectionViewCell", for: indexPath) as! NewPopularCollectionViewCell
+        let cell = popularCollectionView.dequeueReusableCell(withReuseIdentifier: NewPopularCollectionViewCell.identifier, for: indexPath) as! NewPopularCollectionViewCell
         let cityInfo = filteredCityInfo[indexPath.item]
         cell.configureData(from: cityInfo)
         return cell
@@ -180,7 +179,7 @@ final class NewPopularViewController: UIViewController, UICollectionViewDelegate
     }
     
     
-    @IBAction func textFieldEditingChanged(_ sender: UITextField) {
+    @IBAction private func textFieldEditingChanged(_ sender: UITextField) {
         filterCityInfo()
     }
 }
