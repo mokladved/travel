@@ -32,6 +32,7 @@ final class NewPopularViewController: UIViewController, UICollectionViewDelegate
         setSearchViewUI()
         setSegmentControlUI()
         setCollectionViewUI()
+        setNavTitle()
     }
     
     private func loadDefaultData() {
@@ -181,5 +182,9 @@ final class NewPopularViewController: UIViewController, UICollectionViewDelegate
     
     @IBAction private func textFieldEditingChanged(_ sender: UITextField) {
         filterCityInfo()
+    }
+    
+    private func setNavTitle() {
+        navigationItem.title = "인기도시"
     }
 }
